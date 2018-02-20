@@ -1,0 +1,138 @@
+﻿@model VoxConnex.Models.QuoteQuestionnaire
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>QuoteQuestionnaire</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HowManyUsers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HowManyUsers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NeedPhones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NeedPhones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NeedNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NeedNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HowManyNumbersPorting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HowManyNumbersPorting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HowManyLocations)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HowManyLocations)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Street1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Street1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Street2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Street2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zipcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zipcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcceptTerms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcceptTerms)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
