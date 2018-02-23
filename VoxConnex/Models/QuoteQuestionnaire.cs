@@ -8,6 +8,8 @@ namespace VoxConnex.Models
     public class QuoteQuestionnaire
     {
         public int Id { get; set; }
+
+        [Required]
         public int HowManyUsers { get; set; }
         public bool NeedPhones { get; set; }
         public bool NeedNumber { get; set;}
