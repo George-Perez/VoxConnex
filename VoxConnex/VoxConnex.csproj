@@ -170,10 +170,17 @@
     <Compile Include="Migrations\201802161833068_Added CRUD for Products.Designer.cs">
       <DependentUpon>201802161833068_Added CRUD for Products.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802230033060_update.cs" />
+    <Compile Include="Migrations\201802230033060_update.Designer.cs">
+      <DependentUpon>201802230033060_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802230055490_Added Quote Model.cs" />
+    <Compile Include="Migrations\201802230055490_Added Quote Model.Designer.cs">
+      <DependentUpon>201802230055490_Added Quote Model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\QuoteQuestionnaire.cs" />
-    <Compile Include="Models\VoxConnexContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +254,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802161833068_Added CRUD for Products.resx">
       <DependentUpon>201802161833068_Added CRUD for Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802230033060_update.resx">
+      <DependentUpon>201802230033060_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802230055490_Added Quote Model.resx">
+      <DependentUpon>201802230055490_Added Quote Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
