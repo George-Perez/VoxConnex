@@ -179,6 +179,7 @@
       <DependentUpon>201802230055490_Added Quote Model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AddressRequiredAttribute.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\QuoteQuestionnaire.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
