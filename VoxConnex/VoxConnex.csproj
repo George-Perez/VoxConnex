@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201802230055490_Added Quote Model.Designer.cs">
       <DependentUpon>201802230055490_Added Quote Model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802281957016_Added Anontations.cs" />
+    <Compile Include="Migrations\201802281957016_Added Anontations.Designer.cs">
+      <DependentUpon>201802281957016_Added Anontations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\QuoteQuestionnaire.cs" />
@@ -260,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802230055490_Added Quote Model.resx">
       <DependentUpon>201802230055490_Added Quote Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802281957016_Added Anontations.resx">
+      <DependentUpon>201802281957016_Added Anontations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

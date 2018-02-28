@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxConnex", "VoxConnex\VoxConnex.csproj", "{F96589E2-DC07-4A0A-B895-592ABFDD5CB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxConnex", "VoxConnex\VoxConnex.csproj", "{05B4C6E7-596D-4502-8957-031EB2629C53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F96589E2-DC07-4A0A-B895-592ABFDD5CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F96589E2-DC07-4A0A-B895-592ABFDD5CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F96589E2-DC07-4A0A-B895-592ABFDD5CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F96589E2-DC07-4A0A-B895-592ABFDD5CB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B4C6E7-596D-4502-8957-031EB2629C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B4C6E7-596D-4502-8957-031EB2629C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B4C6E7-596D-4502-8957-031EB2629C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B4C6E7-596D-4502-8957-031EB2629C53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {58E647D8-40E0-45AD-88A7-99BAB573374E}
+		SolutionGuid = {98A8502D-42FF-4600-87B2-F0D72F87AC08}
 	EndGlobalSection
 EndGlobal
