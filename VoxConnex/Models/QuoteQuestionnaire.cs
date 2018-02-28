@@ -14,13 +14,13 @@ namespace VoxConnex.Models
         [Display(Name = "How many users do you want to add?")]
         public int HowManyUsers { get; set; }
 
-        [Required(ErrorMessage = "Field can't be empty")]
+        [Required]
         [Display(Name = "Will team members require new phones?")]
         public bool NeedPhones { get; set; }
 
 
-        [Required(ErrorMessage = "Field can't be empty")]
-        [Display(Name = "Get Your Number")]
+        [Required]
+        [Display(Name = "Keep your existing number?")]
         public bool NeedNumber { get; set; }
 
         //User will be sent to this question if NeedNumber is false
@@ -32,12 +32,12 @@ namespace VoxConnex.Models
 
         [Required(ErrorMessage = "Field can't be empty")]
         [Display(Name = "Company Name")]
-        [RegularExpression("/^[.@&]?[a - zA - Z0 - 9] +[!.@&()]?[a - zA - Z0 - 9!()] +/", ErrorMessage = "You must type in a valid company name.")]
+        //[RegularExpression("/^[.@&]?[a - zA - Z0 - 9] +[!.@&()]?[a - zA - Z0 - 9!()] +/", ErrorMessage = "You must type in a valid company name.")]
         public string CompanyName { get; set; }
 
         [Required(ErrorMessage = "Field can't be empty")]
         [Display(Name = "Contact Name")]
-        [RegularExpression("/^[a-z ,.'-]+$/i", ErrorMessage = "Invalid name format.")]
+        //[RegularExpression("/^[a-z ,.'-]+$/i", ErrorMessage = "Invalid name format.")]
         public string ContactName { get; set; }
 
         [Required(ErrorMessage = "Field can't be empty")]
