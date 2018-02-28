@@ -11,20 +11,20 @@ namespace VoxConnex.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Field can't be empty")]
-        [Display(Name = "User Amount")]
+        [Display(Name = "How many users do you want to add?")]
         public int HowManyUsers { get; set; }
 
         [Required(ErrorMessage = "Field can't be empty")]
-        [Display(Name = "New Phone?")]
+        [Display(Name = "Will team members require new phones?")]
         public bool NeedPhones { get; set; }
 
 
         [Required(ErrorMessage = "Field can't be empty")]
-        [Display(Name = "New Number?")]
+        [Display(Name = "Get Your Number")]
         public bool NeedNumber { get; set; }
 
         //User will be sent to this question if NeedNumber is false
-        [Display(Name = "Number Porting")]
+        [Display(Name = "Keep your exsisting phone number")]
         public int HowManyNumbersPorting { get; set; }
 
         [Display(Name = "Location Amount")]
