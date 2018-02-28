@@ -15,5 +15,6 @@ namespace VoxConnex.Data
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<QuoteQuestionnaire> QuoteQuestionnaires { get; set; }
     }
 }
