@@ -65,37 +65,36 @@
         border-radius: 34px;
     }
 
-    .slider.round:before {
-        border-radius: 50%;
-    }
+        .slider.round:before {
+            border-radius: 50%;
+        }
 
     .btn-roles {
         background-color: steelblue;
         text-decoration: none
     }
 
-    .btn-roles:active {
-        background-color: #53b44a;
-        text-decoration: none;
-    }
+        .btn-roles:active {
+            background-color: #53b44a;
+            text-decoration: none;
+        }
 
 
-    .btn-roles:focus {
-        background-color: #53b44a;
-        text-decoration: none;
-    }
+        .btn-roles:focus {
+            background-color: #53b44a;
+            text-decoration: none;
+        }
 
-    .btn-roles:visited {
-        background-color: darkblue;
-        text-decoration: none;
-    }
+        .btn-roles:visited {
+            background-color: darkblue;
+            text-decoration: none;
+        }
 
 
-    .btn-roles:hover {
-        background-color: green;
-        text-decoration: none
-    }
-    
+        .btn-roles:hover {
+            background-color: green;
+            text-decoration: none
+        }
 </style>
 
 
@@ -117,49 +116,46 @@
     @*How many users?*@
     <div class="form-group ">
         <div class="col d-flex justify-content-center">
-            <h2>
+            <h4>
                 Add users to your account
-            </h2>
+            </h4>
         </div>
-        <div class="col d-flex justify-content-center" style="padding-bottom: 30px;">
-            Maximum number of users is 10
+        <div class="col d-flex justify-content-center">
+
+            <p style="font-size:.6rem;">Maximum number of users is 10</p>
         </div>
-        <h5>
+        <div style="padding-top:1rem;">
             @Html.LabelFor(model => model.HowManyUsers, htmlAttributes: new { @class = "col d-flex justify-content-center" })
-        </h5>
-        <div class="col d-flex justify-content-center" style="font-size: 2rem;">
-            @Html.EditorFor(model => model.HowManyUsers, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 100px;" } })
+        </div>
+        <div class="col d-flex justify-content-center">
+            @Html.EditorFor(model => model.HowManyUsers, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 3rem;" } })
         </div>
 
 
         @*This section is checking to see if the customer needs phones*@
 
-        <div class="col d-flex justify-content-center" id="stage" style="padding-top:2rem;">
-            <section class="slider-frame btn-group-toggle ">
+        <div class="col d-flex justify-content-center" style="padding-top:2.2rem;">
+            <div class="slider-frame btn-group-toggle ">
                 <label class="switch">
                     @Html.EditorFor(model => model.NeedPhones)
                     @*Don't worry about this warning. We're using the div here to call the slider function*@
                     <div class="slider round">
                     </div>
                 </label>
-            </section>
+            </div>
         </div>
-
-
-        <h5 style="padding-top:-10px;">
-            @Html.LabelFor(model => model.NeedPhones, htmlAttributes: new { @class = "col d-flex justify-content-center" })
-        </h5>
+        @Html.LabelFor(model => model.NeedPhones, htmlAttributes: new { @class = "col d-flex justify-content-center" })
     </div>
 
-    @*Here you'll write your conditional statement, to take the user to a different section of the webpage depending on new phones is checked or not
+    <div class="row d-flex justify-content-around">
+        <div class="col-2">
+            <a href="#" class="btn btn-success btn-roles " role="button">Back</a>
 
-        @if (Html.ValueFor(model => model.NeedPhones) == true)
-        {
-            ...Do stuff here...
-        }*@
-    <div class="col-sm-offset-8">
-        <a href="#" class="btn-lg btn-success btn-roles " role="button">Next</a>
+        </div>
+        <div class="col-2">
+            <a href="#" class="btn btn-success btn-roles " role="button">Next</a>
 
+        </div>
     </div>
     <hr />
 
@@ -283,16 +279,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-
-
-<script>
-        //$("#IsEnabled").change(function () {
-
-        //    // check if checkbox is being checked
-        //    // taken from /a/23007488 by Alexandru Chichinete
-        //    if ($("#IsEnabled").is(":checked")) {
-        //        // enable form submit
-        //    }
-        //});
-</script>
