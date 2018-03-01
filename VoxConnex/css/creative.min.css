@@ -32,8 +32,17 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif
 }
 
+.card-deck {
+    padding-left: 70px;
+    padding-right:70px;
+}
+
+.bg-vox {
+    background-color: #1db954 !important
+}
+
 .bg-primary {
-    background-color: #53b44a !important
+    background-color: #07a51b !important
 }
 
 .bg-dark {
@@ -86,12 +95,12 @@ img::-moz-selection {
     #mainNav .navbar-brand {
         font-weight: 700;
         text-transform: uppercase;
-        color: #f05f40;
+        color: #289d40;
         font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif
     }
 
         #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-            color: #f05f40
+            color: #289d40
         }
 
     #mainNav .navbar-nav > li.nav-item > a.nav-link, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
@@ -102,11 +111,11 @@ img::-moz-selection {
     }
 
         #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
-            color: #f05f40
+            color: #289d40
         }
 
         #mainNav .navbar-nav > li.nav-item > a.nav-link.active, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
-            color: #f05f40 !important;
+            color: #289d40 !important;
             background-color: transparent
         }
 
@@ -120,6 +129,9 @@ img::-moz-selection {
         background-color: transparent
     }
 
+.vox-logo {
+    max-width: 38%;
+}
         #mainNav .navbar-brand {
             color: rgba(255,255,255,.7)
         }
@@ -133,7 +145,7 @@ img::-moz-selection {
         }
 
             #mainNav .navbar-nav > li.nav-item > a.nav-link, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-                color: rgba(255,255,255,.7)
+                color: rgb(40,157,64)
             }
 
                 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
@@ -146,11 +158,11 @@ img::-moz-selection {
         }
 
             #mainNav.navbar-shrink .navbar-brand {
-                color: #f05f40
+                color: #289d40
             }
 
                 #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
-                    color: #f05f40
+                    color: #289d40
                 }
 
             #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
@@ -158,14 +170,14 @@ img::-moz-selection {
             }
 
                 #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover {
-                    color: #f05f40
+                    color: #289d40
                 }
 }
 
 header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 56px);
-    background-image: url(../img/Deskphoto.jpg);
+    background-image: url(../img/DeskphotoDark.jpg);
     background-position: center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -190,6 +202,10 @@ header.masthead {
     header.masthead p {
         font-size: 1.15rem
     }
+}
+
+.vox-logo {
+    max-width: 38%;
 }
 
 @media (min-width:992px) {
@@ -307,8 +323,3 @@ header.masthead {
     .btn-primary:active, .btn-primary:focus {
         box-shadow: 0 0 0 .2rem rgba(240,95,64,.5) !important
     }
-
-.btn-vox {
-    background-color: #4db73b;
-    border-color: #4db73b
-}
