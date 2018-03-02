@@ -197,7 +197,7 @@
     <Content Include="css\creative.css" />
     <Content Include="css\creative.min.css" />
     <Content Include="gulpfile.js" />
-    <Content Include="img\header.jpg" />
+    <Content Include="img\DeskphotoDark.jpg" />
     <Content Include="img\portfolio\fullsize\1.jpg" />
     <Content Include="img\portfolio\fullsize\2.jpg" />
     <Content Include="img\portfolio\fullsize\3.jpg" />
@@ -216,6 +216,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="img\VoxConnex Logo Green_Black.png" />
+    <Content Include="img\VoxConnex Logo Green_White.png" />
     <Content Include="js\creative.js" />
     <Content Include="js\creative.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
