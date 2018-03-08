@@ -7,6 +7,10 @@ body {
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif
 }
 
+.logo {
+    max-width: 38%;
+}
+
 hr {
     max-width: 50px;
     border-width: 3px;
@@ -34,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-deck {
     padding-left: 70px;
-    padding-right:70px;
+    padding-right: 70px;
 }
 
 .bg-vox {
@@ -83,6 +87,14 @@ img::-moz-selection {
     background: 0 0
 }
 
+.logo-wh {
+    display: block;
+}
+
+.logo-bk {
+    display: block;
+}
+
 #mainNav {
     border-bottom: 1px solid rgba(33,37,41,.1);
     background-color: #fff;
@@ -129,9 +141,6 @@ img::-moz-selection {
         background-color: transparent
     }
 
-.vox-logo {
-    max-width: 38%;
-}
         #mainNav .navbar-brand {
             color: rgba(255,255,255,.7)
         }
@@ -323,3 +332,34 @@ header.masthead {
     .btn-primary:active, .btn-primary:focus {
         box-shadow: 0 0 0 .2rem rgba(240,95,64,.5) !important
     }
+
+.typewriter h2 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .10em; /* Adjust as needed */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: darkgreen;
+    }
+}
