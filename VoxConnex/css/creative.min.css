@@ -13,7 +13,7 @@ body {
 
 hr {
     max-width: 50px;
-    border-width: 3px;
+    border-width: 4px;
     border-color: #f05f40
 }
 
@@ -41,6 +41,9 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 70px;
 }
 
+.mod-text {
+    text-color: black
+}
 .bg-vox {
     background-color: #1db954 !important
 }
@@ -87,17 +90,9 @@ img::-moz-selection {
     background: 0 0
 }
 
-.logo-wh {
-    display: block;
-}
-
-.logo-bk {
-    display: block;
-}
-
 #mainNav {
     border-bottom: 1px solid rgba(33,37,41,.1);
-    background-color: #fff;
+    background-color: #1b1e21;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
@@ -119,7 +114,7 @@ img::-moz-selection {
         font-size: .9rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: #212529
+        color: #fff
     }
 
         #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
@@ -163,7 +158,7 @@ img::-moz-selection {
 
         #mainNav.navbar-shrink {
             border-bottom: 1px solid rgba(33,37,41,.1);
-            background-color: #fff
+            background-color: #1b1e21
         }
 
             #mainNav.navbar-shrink .navbar-brand {
@@ -175,7 +170,7 @@ img::-moz-selection {
                 }
 
             #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
-                color: #212529
+                color: #fff
             }
 
                 #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover {

@@ -35,26 +35,6 @@
     }
   };
 
-  // Swapp white Logo for black color
-  $(function () {
-      var logo = $(".logo-wh"); $(window).scroll(function () {
-          var scroll = $(window).scrollTop();
-
-          if (scroll >= 200) {
-              if (!logo.hasClass("logo-bk")) {
-                  logo.hide();
-                  logo.removeClass('logo-wh').addClass("logo-bk").fadeIn("slow");
-              }
-          } else {
-              if (!logo.hasClass("logo-wh")) {
-                  logo.hide();
-                  logo.removeClass("logo-bk").addClass('logo-wh').fadeIn("slow");
-              }
-          }
-
-      });
-  });
-
   // Collapse now if page is not at top
   navbarCollapse();
   // Collapse the navbar when page is scrolled
