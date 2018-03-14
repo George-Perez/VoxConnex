@@ -1,6 +1,10 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+
+
+
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
@@ -18,7 +22,7 @@
                     <a class="nav-link js-scroll-trigger" href="#services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#Quote">Quote</a>
+                    <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -43,6 +47,7 @@
         </div>
     </div>
 </header>
+
 <section class="bg-vox" id="about">
     <div class="container">
         <div class="row">
@@ -55,6 +60,7 @@
         </div>
     </div>
 </section>
+
 <section id="services">
     <div class="container d-flex">
         <div class="row">
@@ -129,35 +135,119 @@
         </div>
     </div>
 </section>
-<section id="Quote" class="bg-dark text-white">
+
+<section class="bg-dark text-white">
     <div class="container text-center ">
         <h2 class="mb-4">Get your custom voice quote today!</h2>
+        @*<button class="btn btn-light btn-xl sr-button" onclick="myFunction()">
+                GET QUOTE!
+            </button>*@
         <button type="button" class="btn btn-light btn-xl sr-button" data-toggle="modal" data-target=".bd-example-modal-lg" data-whatever="">GET QUOTE!</button>
     </div>
-    <!--Start Modal-->
+    @*Start Modal*@
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">How Many Phones do you need?</label>
-                            <input type="text" class="form-control" id="number of phones">
+
+                    <div class="row">
+                        <div class="col-xs-12 col-xl-12 form-box">
+                            <form role="form" action="" method="post" class="f1">
+
+                                <h3>Register To Our App</h3>
+                                <p>Fill in the form to get instant access</p>
+                                <div class="f1-steps">
+                                    <div class="f1-progress">
+                                        <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+                                    </div>
+                                    <div class="f1-step active">
+                                        <div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                                        <p>about</p>
+                                    </div>
+                                    <div class="f1-step">
+                                        <div class="f1-step-icon"><i class="fa fa-key"></i></div>
+                                        <p>account</p>
+                                    </div>
+                                    <div class="f1-step">
+                                        <div class="f1-step-icon"><i class="fa fa-twitter"></i></div>
+                                        <p>social</p>
+                                    </div>
+                                </div>
+
+                                <fieldset>
+                                    <h4>Tell us who you are:</h4>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="f1-first-name">First name</label>
+                                        <input type="text" name="f1-first-name" placeholder="First name..." class="f1-first-name form-control" id="f1-first-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="f1-last-name">Last name</label>
+                                        <input type="text" name="f1-last-name" placeholder="Last name..." class="f1-last-name form-control" id="f1-last-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="f1-about-yourself">About yourself</label>
+                                        <textarea name="f1-about-yourself" placeholder="About yourself..."
+                                                  class="f1-about-yourself form-control" id="f1-about-yourself"></textarea>
+                                    </div>
+                                    <div class="f1-buttons modal-footer">
+                                        <button type="button" class="btn btn-next">Next</button>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <h4>Set up your account:</h4>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="f1-email">Email</label>
+                                        <input type="text" name="f1-email" placeholder="Email..." class="f1-email form-control" id="f1-email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="f1-password">Password</label>
+                                        <input type="password" name="f1-password" placeholder="Password..." class="f1-password form-control" id="f1-password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="f1-repeat-password">Repeat password</label>
+                                        <input type="password" name="f1-repeat-password" placeholder="Repeat password..."
+                                               class="f1-repeat-password form-control" id="f1-repeat-password">
+                                    </div>
+                                    <div class="f1-buttons modal-footer">
+                                        <button type="button" class="btn btn-previous">Previous</button>
+                                        <button type="button" class="btn btn-next">Next</button>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <h4>Social media profiles:</h4>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="f1-facebook">Facebook</label>
+                                        <input type="text" name="f1-facebook" placeholder="Facebook..." class="f1-facebook form-control" id="f1-facebook">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="f1-twitter">Twitter</label>
+                                        <input type="text" name="f1-twitter" placeholder="Twitter..." class="f1-twitter form-control" id="f1-twitter">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="f1-google-plus">Google plus</label>
+                                        <input type="text" name="f1-google-plus" placeholder="Google plus..." class="f1-google-plus form-control" id="f1-google-plus">
+                                    </div>
+                                    <div class="f1-buttons modal-footer">
+                                        <button type="button" class="btn btn-previous">Previous</button>
+                                        <button type="submit" class="btn btn-submit">Submit</button>
+                                    </div>
+                                </fieldset>
+
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label for="message-text" class="mod-text col-form-label">How many users you need?</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Next</button>
-                </div>
+
+                @*<div class="modal-footer f1-buttons">
+
+                    </div>*@
             </div>
         </div>
     </div>
-    <!--End Modal-->
+
+    @*End Modal*@
 </section>
 
 <section class="get-quote" id="quote-creator" style="display:none">
@@ -187,6 +277,7 @@
         </div>
     </div>
 </section>
+
 <script>
     function myFunction() {
         var x = document.getElementById("quote-creator");
