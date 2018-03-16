@@ -224,6 +224,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="img\sa-map-light.jpg" />
+    <Content Include="img\SA-MAP.png" />
     <Content Include="img\VoxConnex Logo Green_Black.png" />
     <Content Include="img\VoxConnex Logo Green_White.png" />
     <Content Include="js\creative.js" />

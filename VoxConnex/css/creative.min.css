@@ -7,10 +7,6 @@ body {
     font-family: Merriweather,'Helvetica Neue',Arial,sans-serif
 }
 
-.logo {
-    max-width: 38%;
-}
-
 hr {
     max-width: 50px;
     border-width: 4px;
@@ -41,9 +37,15 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 70px;
 }
 
-.mod-text {
+.card-deck > .card {
+    max-width: 350px;
+    min-width: 300px;
+}
+
+    .mod-text {
     text-color: black
 }
+
 .bg-vox {
     background-color: #1db954 !important
 }
@@ -130,6 +132,10 @@ img::-moz-selection {
                 background-color: transparent
             }
 
+.typed {
+    color: white;
+}
+
 @media (min-width:992px) {
     #mainNav {
         border-color: transparent;
@@ -178,6 +184,17 @@ img::-moz-selection {
                 }
 }
 
+#contact {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url('../img/sa-map-light.jpg');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
+
 header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 56px);
@@ -206,13 +223,6 @@ header.masthead {
     header.masthead p {
         font-size: 1.15rem
     }
-}
-
-
-
-
-.vox-logo {
-    max-width: 38%;
 }
 
 @media (min-width:992px) {
@@ -331,13 +341,13 @@ header.masthead {
         box-shadow: 0 0 0 .2rem rgba(240,95,64,.5) !important
     }
 
-.typewriter h2 {
+.typewriter {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .10em; /* Adjust as needed */
-    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
 }
 
 /* The typing effect */
@@ -361,6 +371,3 @@ header.masthead {
         border-color: darkgreen;
     }
 }
-
-
-

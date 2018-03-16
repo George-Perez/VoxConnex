@@ -17,7 +17,7 @@ strong {
 }
 
 a, a:hover, a:focus {
-    color: #f35b3f;
+    color: #289d40;
     text-decoration: none;
     -o-transition: all .3s;
     -moz-transition: all .3s;
@@ -57,6 +57,7 @@ img {
     color: #fff;
     text-shadow: none;
 }
+<<<<<<< Updated upstream
 
 ::selection {
     background: #f35b3f;
@@ -171,6 +172,12 @@ input[type="checkbox"]:checked + .slider:before {
         text-decoration: none;
     }
 
+::selection {
+    background: #289d40;
+    color: #fff;
+    text-shadow: none;
+}
+
     .btn-roles:visited {
         background-color: darkblue;
         text-decoration: none;
@@ -246,7 +253,7 @@ ul.navbar-nav {
         }
 
 .navbar-brand {
-    width: 162px;
+    width: 350px;
     background: url(../img/logo.png) left center no-repeat;
     text-indent: -99999px;
 }
@@ -399,8 +406,13 @@ ul.navbar-nav {
     color: #1db954;
 }
 
+.f1-buttons {
+    text-align: right;
+}
 
-
+.f1 .input-error {
+    border-color: #f35b3f;
+}
 
 /***** Media queries *****/
 
@@ -411,10 +423,6 @@ ul.navbar-nav {
 }
 
 @media (max-width: 767px) {
-
-
-
-
 
     .navbar {
         padding-top: 0;

@@ -3,15 +3,11 @@
 @{
     ViewBag.Title = "Home Page";
 }
-
-
-
-
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
         <a class=" js-scroll-trigger" href="#page-top"></a>
-        <img class="logo navbar-brand" src="~/img/VoxConnex Logo Green_White.png" />
+        <img class="navbar-brand" src="~/img/VoxConnex Logo Green_White.png" />
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +20,7 @@
                     <a class="nav-link js-scroll-trigger" href="#services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+                    <a class="nav-link js-scroll-trigger" href="#quote">Quote</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -36,12 +32,9 @@
 <header class="masthead text-center text-light d-flex">
     <div class="container my-auto">
         <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <hr>
-            </div>
             <div class="col-lg-8 mx-auto">
                 <div class="typewriter">
-                    <h2>Solutions For Todays Small Business.</h2>
+                    <h2 class="typed">Solutions For Todays Small Business.</h2>
                 </div>
                 <p class="text-light mb-5">Offering taylored voice solutions to me the needs and budget of your business.</p>
                 <a class="btn btn-outline-success btn-xl js-scroll-trigger" href="#about">Learn More</a>
@@ -64,7 +57,7 @@
 </section>
 
 <section id="services">
-    <div class="container d-flex">
+    <div class="container d-flex justify-content-center">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Service Plans</h2>
@@ -73,7 +66,6 @@
             </div>
         </div>
     </div>
-
     <div class="card-deck mb-3 text-center col d-flex justify-content-center">
         <div class="card mb-4 box-shadow   card-fixed-width">
             <div class="card-header">
@@ -90,7 +82,9 @@
                 <button type="button" class="btn btn-success btn-block ">Contact us</button>
             </div>
         </div>
+
         <div class="card mb-4 box-shadow   card-fixed-width">
+
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Std. PBX</h4>
             </div>
@@ -105,6 +99,7 @@
                 <button type="button" class="btn btn-success btn-block">Contact us</button>
             </div>
         </div>
+
         <div class="card mb-4 box-shadow   card-fixed-width">
             <div class="card-header bg-vox">
                 <h4 class="my-0 font-weight-normal">Pro PBX</h4>
@@ -138,13 +133,10 @@
     </div>
 </section>
 
-<section class="bg-dark text-white">
+<section id="quote" class="bg-dark text-white">
     <div class="container text-center ">
-        <h2 class="mb-4">Get your custom voice quote today!</h2>
-        @*<button class="btn btn-light btn-xl sr-button" onclick="myFunction()">
-                GET QUOTE!
-            </button>*@
-        <button type="button" class="btn btn-light btn-xl sr-button" data-toggle="modal" data-target=".bd-example-modal-lg" data-whatever="">GET QUOTE!</button>
+        <h2 class="typed mb-4">Get your custom voice quote today!</h2>
+        <a class="btn btn-light btn-xl js-scroll-trigger" data-toggle="modal" data-target=".bd-example-modal-lg" href="" data-whatever="">Get Started!</a>
     </div>
 
 
@@ -154,12 +146,9 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-body">
-
                     <div class="row">
                         <div class="col-xs-12 col-xl-12 form-box">
                             <form role="form" action="" method="post" class="f1">
-
-
                                 @*TITLE OF F1 FORM*@
                                 <h3>NEW QUOTE REQUEST</h3>
                                 <p class="text-green">Fill in the form to build your quote</p>
@@ -180,9 +169,6 @@
                                         <p>Contact</p>
                                     </div>
                                 </div>
-
-
-                                @*1ST FIELD SET*@
                                 <fieldset>
                                     <p class="text-green">@Html.LabelFor(model => model.NeedNumber, htmlAttributes: new { @class = "col d-flex justify-content-center" })</p>
                                     <div class="col d-flex justify-content-center">
@@ -209,9 +195,6 @@
 
 
                                 </fieldset>
-
-
-                                @*2ND FIELD SET*@
                                 <fieldset>
                                     <p class="text-green">@Html.LabelFor(model => model.NeedPhones, htmlAttributes: new { @class = "col d-flex justify-content-center" })</p>
                                     <div class="col d-flex justify-content-center">
@@ -235,7 +218,6 @@
                                         <button type="button" class="btn f1-btn btn-next">Next</button>
                                     </div>
                                 </fieldset>
-
                                 <fieldset>
                                     <h4>Social media profiles:</h4>
                                     <div class="form-group">
@@ -255,12 +237,10 @@
                                         <button type="submit" class="btn f1-btn btn-submit">Submit</button>
                                     </div>
                                 </fieldset>
-
                             </form>
                         </div>
                     </div>
                 </div>
-
                 @*<div class="modal-footer f1-buttons">
 
                     </div>*@
@@ -289,6 +269,10 @@
                 <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
                 <p>210-233-9880</p>
             </div>
+            <div class="col-lg-4 ml-auto text-center">
+                <i class="fa fa-compass fa-3x mb-3 sr-contact"></i>
+                <p>4115 Medical Dr <br />San Antonio,Texas 78229</p>
+            </div>
             <div class="col-lg-4 mr-auto text-center">
                 <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
                 <p>
@@ -298,8 +282,6 @@
         </div>
     </div>
 </section>
-
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -327,6 +309,3 @@
         }
     });
 </script>
-
-
-
