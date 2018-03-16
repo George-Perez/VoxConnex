@@ -52,13 +52,21 @@ jQuery(document).ready(function() {
     	
     	// fields validation
     	parent_fieldset.find('input[type="text"], input[type="password"], textarea').each(function() {
-    		if( $(this).val() == "" ) {
-    			$(this).addClass('input-error');
-    			next_step = false;
+            if ($(this).val() == "") {
+                if (!$(this).hasClass("optional")) {
+                    $(this).addClass('input-error');
+                    next_step = false;
+                }
     		}
     		else {
     			$(this).removeClass('input-error');
-    		}
+
+            }
+            //if ($(this).val() != "") {
+            //    $(this).removeClass('input-error');
+            //}
+
+    	
     	});
     	// fields validation
     	
