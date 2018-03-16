@@ -185,7 +185,7 @@
                                         @Html.LabelFor(model => model.HowManyNumbersPorting, htmlAttributes: new { @class = "text-green col d-flex justify-content-center" })
 
                                         <div class="col d-flex justify-content-center padding-top-bottom">
-                                            @Html.EditorFor(model => model.HowManyNumbersPorting, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 3rem; padding: 0;" } })
+                                            @Html.EditorFor(model => model.HowManyNumbersPorting, "Text", new {htmlAttributes = new { @class = "col text-center optional", @style = "max-width: 3rem; padding: 0;"} })
                                         </div>
                                     </div>
                                     <div class="f1-buttons modal-footer">
@@ -211,7 +211,7 @@
                                     @Html.LabelFor(model => model.HowManyUsers, htmlAttributes: new { @class = "text-green col d-flex justify-content-center" })
 
                                     <div class="col d-flex justify-content-center padding-top-bottom">
-                                        @Html.EditorFor(model => model.HowManyUsers, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 3rem; padding: 0;" } })
+                                        @Html.TextBoxFor(model => model.HowManyUsers, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 3rem; padding: 0;", @Value = "0" } })
                                     </div>
                                     <div class="f1-buttons modal-footer">
                                         <button type="button" class="btn btn-previous">Previous</button>
@@ -287,13 +287,13 @@
 <script>
 
     $(document).ready(function () {
+     
+
         $('#portnumber-toggle').click(function () {
             if ($('.portnumber').css('visibility') == 'hidden') {
-                $('.portnumber').append('.not-require');
                 $('.portnumber').css('visibility', 'visible');
             }
             else {
-                $('.portnumber').remove('.not-require');
                 $('.portnumber').css('visibility', 'hidden');
             }
         });

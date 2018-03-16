@@ -25,7 +25,7 @@ namespace VoxConnex.Models
 
         //User will be sent to this question if NeedNumber is false
         [Display(Name = "How many numbers are being ported?")]
-        public int HowManyNumbersPorting { get; set; }
+        public int? HowManyNumbersPorting { get; set; }
 
         [Display(Name = "Location Amount")]
         public int HowManyLocations { get; set; }
