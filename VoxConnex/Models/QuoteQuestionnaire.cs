@@ -19,12 +19,12 @@ namespace VoxConnex.Models
         public bool NeedPhones { get; set; }
 
 
-        [Required]
+        
         [Display(Name = "Keep your existing number?")]
         public bool NeedNumber { get; set; }
 
         //User will be sent to this question if NeedNumber is false
-        [Display(Name = "Keep your exsisting phone number")]
+        [Display(Name = "How many numbers are being ported?")]
         public int HowManyNumbersPorting { get; set; }
 
         [Display(Name = "Location Amount")]

@@ -1,4 +1,6 @@
-﻿@{
+﻿
+@model VoxConnex.Models.QuoteQuestionnaire
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -72,8 +74,8 @@
         </div>
     </div>
 
-    <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 box-shadow">
+    <div class="card-deck mb-3 text-center col d-flex justify-content-center">
+        <div class="card mb-4 box-shadow   card-fixed-width">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">SIP Trunk</h4>
             </div>
@@ -88,7 +90,7 @@
                 <button type="button" class="btn btn-success btn-block ">Contact us</button>
             </div>
         </div>
-        <div class="card mb-4 box-shadow">
+        <div class="card mb-4 box-shadow   card-fixed-width">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Std. PBX</h4>
             </div>
@@ -103,7 +105,7 @@
                 <button type="button" class="btn btn-success btn-block">Contact us</button>
             </div>
         </div>
-        <div class="card mb-4 box-shadow">
+        <div class="card mb-4 box-shadow   card-fixed-width">
             <div class="card-header bg-vox">
                 <h4 class="my-0 font-weight-normal">Pro PBX</h4>
             </div>
@@ -118,7 +120,7 @@
                 <button type="button" class="btn btn-success btn-block">Contact us</button>
             </div>
         </div>
-        <div class="card mb-4 box-shadow">
+        <div class="card mb-4 box-shadow   card-fixed-width">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Virtual PBX</h4>
             </div>
@@ -144,6 +146,9 @@
             </button>*@
         <button type="button" class="btn btn-light btn-xl sr-button" data-toggle="modal" data-target=".bd-example-modal-lg" data-whatever="">GET QUOTE!</button>
     </div>
+
+
+
     @*Start Modal*@
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -154,64 +159,80 @@
                         <div class="col-xs-12 col-xl-12 form-box">
                             <form role="form" action="" method="post" class="f1">
 
-                                <h3>Register To Our App</h3>
-                                <p>Fill in the form to get instant access</p>
+
+                                @*TITLE OF F1 FORM*@
+                                <h3>NEW QUOTE REQUEST</h3>
+                                <p class="text-green">Fill in the form to build your quote</p>
                                 <div class="f1-steps">
                                     <div class="f1-progress">
                                         <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
                                     </div>
                                     <div class="f1-step active">
+                                        <div class="f1-step-icon"><i class="fas fa-phone"></i></div>
+                                        <p>New Number</p>
+                                    </div>
+                                    <div class="f1-step">
                                         <div class="f1-step-icon"><i class="fa fa-user"></i></div>
-                                        <p>about</p>
+                                        <p>Users</p>
                                     </div>
                                     <div class="f1-step">
-                                        <div class="f1-step-icon"><i class="fa fa-key"></i></div>
-                                        <p>account</p>
-                                    </div>
-                                    <div class="f1-step">
-                                        <div class="f1-step-icon"><i class="fa fa-twitter"></i></div>
-                                        <p>social</p>
+                                        <div class="f1-step-icon"><i class="fas fa-address-card"></i></div>
+                                        <p>Contact</p>
                                     </div>
                                 </div>
 
+
+                                @*1ST FIELD SET*@
                                 <fieldset>
-                                    <h4>Tell us who you are:</h4>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="f1-first-name">First name</label>
-                                        <input type="text" name="f1-first-name" placeholder="First name..." class="f1-first-name form-control" id="f1-first-name">
+                                    <p class="text-green">@Html.LabelFor(model => model.NeedNumber, htmlAttributes: new { @class = "col d-flex justify-content-center" })</p>
+                                    <div class="col d-flex justify-content-center">
+                                        <div class="slider-frame btn-group-toggle">
+                                            <label class="switch">
+                                                @Html.EditorFor(model => model.NeedNumber)
+                                                @*Don't worry about this warning. We're using the div here to call the slider function*@
+                                                <div class="slider round" id="portnumber-toggle">
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="f1-last-name">Last name</label>
-                                        <input type="text" name="f1-last-name" placeholder="Last name..." class="f1-last-name form-control" id="f1-last-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="f1-about-yourself">About yourself</label>
-                                        <textarea name="f1-about-yourself" placeholder="About yourself..."
-                                                  class="f1-about-yourself form-control" id="f1-about-yourself"></textarea>
+                                    <div class="portnumber">
+                                        @Html.LabelFor(model => model.HowManyNumbersPorting, htmlAttributes: new { @class = "text-green col d-flex justify-content-center" })
+
+                                        <div class="col d-flex justify-content-center padding-top-bottom">
+                                            @Html.EditorFor(model => model.HowManyNumbersPorting, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 3rem; padding: 0;" } })
+                                        </div>
                                     </div>
                                     <div class="f1-buttons modal-footer">
-                                        <button type="button" class="btn btn-next">Next</button>
+                                        <button type="button" class="btn f1-btn btn-next">Next</button>
                                     </div>
+
+
+
                                 </fieldset>
 
+
+                                @*2ND FIELD SET*@
                                 <fieldset>
-                                    <h4>Set up your account:</h4>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="f1-email">Email</label>
-                                        <input type="text" name="f1-email" placeholder="Email..." class="f1-email form-control" id="f1-email">
+                                    <p class="text-green">@Html.LabelFor(model => model.NeedPhones, htmlAttributes: new { @class = "col d-flex justify-content-center" })</p>
+                                    <div class="col d-flex justify-content-center">
+                                        <div class="slider-frame btn-group-toggle">
+                                            <label class="switch">
+                                                @Html.EditorFor(model => model.NeedPhones)
+                                                @*Don't worry about this warning. We're using the div here to call the slider function*@
+                                                <div class="slider round">
+                                                </div>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="f1-password">Password</label>
-                                        <input type="password" name="f1-password" placeholder="Password..." class="f1-password form-control" id="f1-password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="f1-repeat-password">Repeat password</label>
-                                        <input type="password" name="f1-repeat-password" placeholder="Repeat password..."
-                                               class="f1-repeat-password form-control" id="f1-repeat-password">
+
+                                    @Html.LabelFor(model => model.HowManyUsers, htmlAttributes: new { @class = "text-green col d-flex justify-content-center" })
+
+                                    <div class="col d-flex justify-content-center padding-top-bottom">
+                                        @Html.EditorFor(model => model.HowManyUsers, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 3rem; padding: 0;" } })
                                     </div>
                                     <div class="f1-buttons modal-footer">
                                         <button type="button" class="btn btn-previous">Previous</button>
-                                        <button type="button" class="btn btn-next">Next</button>
+                                        <button type="button" class="btn f1-btn btn-next">Next</button>
                                     </div>
                                 </fieldset>
 
@@ -231,7 +252,7 @@
                                     </div>
                                     <div class="f1-buttons modal-footer">
                                         <button type="button" class="btn btn-previous">Previous</button>
-                                        <button type="submit" class="btn btn-submit">Submit</button>
+                                        <button type="submit" class="btn f1-btn btn-submit">Submit</button>
                                     </div>
                                 </fieldset>
 
@@ -278,13 +299,34 @@
     </div>
 </section>
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    function myFunction() {
-        var x = document.getElementById("quote-creator");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
+
+    $(document).ready(function () {
+        $('#portnumber-toggle').click(function () {
+            if ($('.portnumber').css('visibility') == 'hidden') {
+                $('.portnumber').append('.not-require');
+                $('.portnumber').css('visibility', 'visible');
+            }
+            else {
+                $('.portnumber').remove('.not-require');
+                $('.portnumber').css('visibility', 'hidden');
+            }
+        });
+
+
+        function myFunction() {
+            var x = document.getElementById("quote-creator");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
         }
-    }
+    });
 </script>
+
+
+
