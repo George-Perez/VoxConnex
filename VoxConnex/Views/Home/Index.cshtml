@@ -66,8 +66,8 @@
             </div>
         </div>
     </div>
-    <div class="card-deck mb-3 text-center col d-flex justify-content-center">
-        <div class="card mb-4 box-shadow   card-fixed-width">
+    <div class="card-deck mb-3 text-center col d-flex justify-content-center ">
+        <div class="card mb-4 box-shadow   card-fixed-width transistion-up">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">SIP Trunk</h4>
             </div>
@@ -78,12 +78,12 @@
                     <li>500 minutes</li>
                     <li>Disaster recoverey failover</li>
                     <li>Burst to more call paths ondemand <i class="fa fa-info-circle" title="*Minute overages billed at 3.9¢ per minute. Burstable SIP trunk billed at $4 surcharge plus cost of SIP trunk for that month."></i></li>
-                   
+
                 </ul>
                 <button type="button" class="btn btn-success btn-block ">Contact us</button>
             </div>
         </div>
-        <div class="card mb-4 box-shadow   card-fixed-width">
+        <div class="card mb-4 box-shadow   card-fixed-width transistion-up">
 
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Std. PBX</h4>
@@ -99,7 +99,7 @@
                 <button type="button" class="btn btn-success btn-block">Contact us</button>
             </div>
         </div>
-        <div class="card mb-4 box-shadow box card-fixed-width">
+        <div class="card mb-4 box-shadow box card-fixed-width transistion-up">
             <div class="ribbon ribbon-top-right"><span>Most Popular</span></div>
             <div class="card-header bg-vox">
                 <h4 class="my-0 font-weight-normal">Pro PBX</h4>
@@ -115,7 +115,7 @@
                 <button type="button" class="btn btn-success btn-block">Contact us</button>
             </div>
         </div>
-        <div class="card mb-4 box-shadow   card-fixed-width">
+        <div class="card mb-4 box-shadow   card-fixed-width transistion-up">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Virtual PBX</h4>
             </div>
@@ -169,6 +169,8 @@
                                         <p>Contact</p>
                                     </div>
                                 </div>
+
+                                @*FIRST FIELD SET*@
                                 <fieldset>
                                     <p class="text-green">@Html.LabelFor(model => model.NeedNumber, htmlAttributes: new { @class = "col d-flex justify-content-center" })</p>
                                     <div class="col d-flex justify-content-center">
@@ -177,73 +179,150 @@
                                                 @Html.EditorFor(model => model.NeedNumber)
                                                 @*Don't worry about this warning. We're using the div here to call the slider function*@
                                                 <div class="slider round" id="portnumber-toggle">
+                                                    <div id="slider">
+                                                        <div class="switch-btn" id="switch-btn">
+                                                            <p>no</p>
+                                                            <p>yes</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="portnumber">
                                         @Html.LabelFor(model => model.HowManyNumbersPorting, htmlAttributes: new { @class = "text-green col d-flex justify-content-center" })
-
                                         <div class="col d-flex justify-content-center padding-top-bottom">
-                                            @Html.EditorFor(model => model.HowManyNumbersPorting, "Text", new {htmlAttributes = new { @class = "col text-center optional", @style = "max-width: 3rem; padding: 0;"} })
+                                            @Html.EditorFor(model => model.HowManyNumbersPorting, "Text", new { htmlAttributes = new { @class = "col text-center optional", @style = "max-width: 3rem; padding: 0;" } })
                                         </div>
                                     </div>
                                     <div class="f1-buttons modal-footer">
                                         <button type="button" class="btn f1-btn btn-next">Next</button>
                                     </div>
-
-
-
                                 </fieldset>
+
+
+                                @*SECOND FIELD SET*@
                                 <fieldset>
                                     <p class="text-green">@Html.LabelFor(model => model.NeedPhones, htmlAttributes: new { @class = "col d-flex justify-content-center" })</p>
                                     <div class="col d-flex justify-content-center">
                                         <div class="slider-frame btn-group-toggle">
                                             <label class="switch">
                                                 @Html.EditorFor(model => model.NeedPhones)
-                                                @*Don't worry about this warning. We're using the div here to call the slider function*@
+                                                @*Don't worry about the warning below this comment. We're using the div here to call the slider function*@
                                                 <div class="slider round">
+                                                    <div id="slider2">
+                                                        <div class="switch-btn" id="switch-btn2">
+                                                            <p>no</p>
+                                                            <p>yes</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </label>
                                         </div>
                                     </div>
-
                                     @Html.LabelFor(model => model.HowManyUsers, htmlAttributes: new { @class = "text-green col d-flex justify-content-center" })
-
                                     <div class="col d-flex justify-content-center padding-top-bottom">
-                                        @Html.TextBoxFor(model => model.HowManyUsers, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 3rem; padding: 0;", @Value = "0" } })
+                                        @Html.EditorFor(model => model.HowManyUsers, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 3rem; padding: 0;" } })
                                     </div>
                                     <div class="f1-buttons modal-footer">
                                         <button type="button" class="btn btn-previous">Previous</button>
                                         <button type="button" class="btn f1-btn btn-next">Next</button>
                                     </div>
                                 </fieldset>
+
+
+                                @*THIRD FIELD SET*@
                                 <fieldset>
-                                    <h4>Social media profiles:</h4>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="f1-facebook">Facebook</label>
-                                        <input type="text" name="f1-facebook" placeholder="Facebook..." class="f1-facebook form-control" id="f1-facebook">
+                                    <div class="row">
+                                        <div class="form-group text-green col-md-12">
+                                            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group text-green col-md-12">
+                                            @Html.LabelFor(model => model.ContactName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group text-green col-md-6">
+                                            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-12 text-green">
+                                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-green"} })
+                                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger text-green" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group text-green col-md-6">
+                                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text-green" } })
+                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
                                     </div>
+
+
+                                    @*These extra calls below this line are turned off for now. Do you really need their address or can you contact them and get that information later?*@
+
+                                    @*<div class="form-group text-green col-md-4">
+                                            @Html.LabelFor(model => model.Street1, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.Street1, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Street1, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group text-green col-md-4">
+                                            @Html.LabelFor(model => model.Street2, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.Street2, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Street2, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group text-green col-md-4 ">
+                                            @Html.LabelFor(model => model.CityName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.CityName, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group text-green col-md-4 ">
+                                            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group text-green col-md-4">
+                                            @Html.LabelFor(model => model.Zipcode, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-12">
+                                                @Html.EditorFor(model => model.Zipcode, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Zipcode, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>*@
+
                                     <div class="form-group">
-                                        <label class="sr-only" for="f1-twitter">Twitter</label>
-                                        <input type="text" name="f1-twitter" placeholder="Twitter..." class="f1-twitter form-control" id="f1-twitter">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="f1-google-plus">Google plus</label>
-                                        <input type="text" name="f1-google-plus" placeholder="Google plus..." class="f1-google-plus form-control" id="f1-google-plus">
-                                    </div>
-                                    <div class="f1-buttons modal-footer">
-                                        <button type="button" class="btn btn-previous">Previous</button>
-                                        <button type="submit" class="btn f1-btn btn-submit">Submit</button>
+                                        <div class="f1-buttons modal-footer">
+                                            <button type="button" class="btn btn-previous">Previous</button>
+                                            <input type="submit" value="Submit" class="btn f1-btn btn-next" />
+                                        </div>
                                     </div>
                                 </fieldset>
                             </form>
                         </div>
                     </div>
                 </div>
-                @*<div class="modal-footer f1-buttons">
-
-                    </div>*@
             </div>
         </div>
     </div>
@@ -266,15 +345,15 @@
         </div>
         <div class="row">
             <div class="col-lg-4 ml-auto text-center">
-                <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+                <i class="fa fa-phone fa-3x mb-3"></i>
                 <p>210-233-9880</p>
             </div>
             <div class="col-lg-4 ml-auto text-center">
-                <i class="fa fa-compass fa-3x mb-3 sr-contact"></i>
+                <i class="fa fa-compass fa-3x mb-3"></i>
                 <p>4115 Medical Dr <br />San Antonio,Texas 78229</p>
             </div>
             <div class="col-lg-4 mr-auto text-center">
-                <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+                <i class="fa fa-envelope-o fa-3x mb-3"></i>
                 <p>
                     <a href="mailto:your-office@visolutions.net">info@visolutions.net</a>
                 </p>
@@ -283,11 +362,11 @@
     </div>
 </section>
 
-@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
     $(document).ready(function () {
-     
+
 
         $('#portnumber-toggle').click(function () {
             if ($('.portnumber').css('visibility') == 'hidden') {
