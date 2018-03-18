@@ -74,3 +74,34 @@
   });
 
 })(jQuery); // End of use strict
+
+
+$(function () {
+    $('#slider').hover(function () {
+        $('#switch-btn').css('visibility', 'visible');
+    },
+        function () {
+            // on mouseout, reset the background colour
+            $('#switch-btn').css('visibility', 'hidden')
+    });
+});
+
+
+$(function () {
+    $('#slider2').hover(function () {
+        $('#switch-btn2').css('visibility', 'visible');
+    },
+        function () {
+            // on mouseout, reset the background colour
+            $('#switch-btn2').css('visibility', 'hidden')
+        });
+});
+
+
+
+//if ($('.portnumber').css('visibility') == 'hidden') {
+//    $('.portnumber').css('visibility', 'visible');
+//}
+//else {
+//    $('.portnumber').css('visibility', 'hidden');
+//}

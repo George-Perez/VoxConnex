@@ -37,12 +37,12 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 70px;
 }
 
-.card-deck > .card {
-    max-width: 350px;
-    min-width: 300px;
-}
+    .card-deck > .card {
+        max-width: 350px;
+        min-width: 300px;
+    }
 
-    .mod-text {
+.mod-text {
     text-color: black
 }
 
@@ -204,6 +204,47 @@ img::-moz-selection {
         transform: rotate(45deg);
     }
 
+
+
+.switch-btn {
+    color: green;
+    display: inline-flex;
+    visibility: hidden;
+    justify-content: space-around;
+    width: 124px;
+    position: relative;
+    right: 43px;
+    bottom: 8px;
+}
+
+
+
+.transistion-up {
+    -webkit-transition: -webkit-transform .3s cubic-bezier(.68,-.55,.265,1.55);
+    transition: -webkit-transform .3s cubic-bezier(.68,-.55,.265,1.55);
+    transition: transform .3s cubic-bezier(.68,-.55,.265,1.55);
+    transition: transform .3s cubic-bezier(.68,-.55,.265,1.55),-webkit-transform .3s cubic-bezier(.68,-.55,.265,1.55);
+}
+
+    .transistion-up:hover {
+        -webkit-transform: translateY(-.5rem);
+        transform: translateY(-.5rem);
+        transition: box-shadow 0.3s ease-in-out;
+        box-shadow: 0 6px 14px 4px darkgreen;
+    }
+
+
+
+.icon-adjustments {
+    opacity: 1;
+    font-size: 7.1rem;
+}
+
+
+
+
+
+/*BREAK POINTS*/
 @media (min-width:992px) {
     #mainNav {
         border-color: transparent;

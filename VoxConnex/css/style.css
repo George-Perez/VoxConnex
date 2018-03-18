@@ -395,6 +395,7 @@ ul.navbar-nav {
 
 .f1 .input-error {
     border-color: #f35b3f;
+    color: green;
 }
 
 .text-green {
@@ -407,6 +408,7 @@ ul.navbar-nav {
 
 .f1 .input-error {
     border-color: #f35b3f;
+    color: green;
 }
 
 /***** Media queries *****/

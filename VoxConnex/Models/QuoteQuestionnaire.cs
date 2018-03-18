@@ -18,8 +18,6 @@ namespace VoxConnex.Models
         [Display(Name = "Will team members require new phones?")]
         public bool NeedPhones { get; set; }
 
-
-        
         [Display(Name = "Keep your existing number?")]
         public bool NeedNumber { get; set; }
 
@@ -40,39 +38,36 @@ namespace VoxConnex.Models
         //[RegularExpression("/^[a-z ,.'-]+$/i", ErrorMessage = "Invalid name format.")]
         public string ContactName { get; set; }
 
-        [Required(ErrorMessage = "Field can't be empty")]
-        [Display(Name = "Street")]
-        public string Street1 { get; set; }
+        //DISABLED FOR NOW Do we really need their phyiscal address or can you call them later?
+        //[Required(ErrorMessage = "Field can't be empty")]
+        //[Display(Name = "Street")]
+        //public string Street1 { get; set; }
 
-        [Display(Name = "Apt")]
-        public string Street2 { get; set; }
+        //[Display(Name = "Apt")]
+        //public string Street2 { get; set; }
 
-        [Required(ErrorMessage = "Field can't be empty")]
-        [Display(Name = "City")]
-        public string CityName { get; set; }
+        //[Required(ErrorMessage = "Field can't be empty")]
+        //[Display(Name = "City")]
+        //public string CityName { get; set; }
 
-        [Display(Name = "State")]
-        public string State { get; set; }
+        //[Display(Name = "State")]
+        //public string State { get; set; }
 
-        [Required(ErrorMessage = "Field can't be empty")]
-        [Display(Name = "Zipcode")]
-        public int Zipcode { get; set; }
-
+        //[Required(ErrorMessage = "Field can't be empty")]
+        //[Display(Name = "Zipcode")]
+        //public int Zipcode { get; set; }
 
         [Required(ErrorMessage = "Field can't be empty")]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
-
-
         [Required(ErrorMessage = "Field can't be empty")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
 
-
-
-        [Required(ErrorMessage = "Field can't be empty")]
-        public bool AcceptTerms { get; set; }
+        //Disabled accept terms until you have terms to accept
+        //[Required(ErrorMessage = "Field can't be empty")]
+        //public bool AcceptTerms { get; set; }
 
     }
 }
