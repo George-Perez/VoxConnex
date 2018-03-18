@@ -230,7 +230,7 @@ img::-moz-selection {
         -webkit-transform: translateY(-.5rem);
         transform: translateY(-.5rem);
         transition: box-shadow 0.3s ease-in-out;
-        box-shadow: 0 6px 14px 4px darkgreen;
+        box-shadow: 0 6px 14px 4px lightgrey;
     }
 
 
