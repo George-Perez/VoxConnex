@@ -241,8 +241,6 @@
                                                 @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-
                                         <div class="form-group text-green col-md-12">
                                             @Html.LabelFor(model => model.ContactName, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
@@ -250,16 +248,13 @@
                                                 @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-
                                         <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12 text-green">
-                                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-green"} })
+                                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-green" } })
                                                 @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger text-green" })
                                             </div>
                                         </div>
-
                                         <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
@@ -267,55 +262,54 @@
                                                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-                                    </div>
-
-
-                                    @*These extra calls below this line are turned off for now. Do you really need their address or can you contact them and get that information later?*@
-
-                                    @*<div class="form-group text-green col-md-4">
+                                        <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.Street1, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.Street1, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.Street1, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-                                        <div class="form-group text-green col-md-4">
+                                        <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.Street2, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.Street2, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.Street2, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-                                        <div class="form-group text-green col-md-4 ">
+                                        <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.CityName, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.CityName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-                                        <div class="form-group text-green col-md-4 ">
+                                        <div class="form-group text-green col-md-6 ">
                                             @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
                                         <div class="form-group text-green col-md-4">
                                             @Html.LabelFor(model => model.Zipcode, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.Zipcode, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.Zipcode, "", new { @class = "text-danger" })
                                             </div>
-                                        </div>*@
+                                        </div>
+                                        <div class="custom-control text-green custom-checkbox col-md-12">
 
-                                    <div class="form-group">
-                                        <div class="f1-buttons modal-footer">
-                                            <button type="button" class="btn btn-previous">Previous</button>
-                                            <input type="submit" value="Submit" class="btn f1-btn btn-next" />
+                                            <div class="custom-control-indicator text-green"></div>
+                                            @Html.CheckBoxFor(model => model.AcceptTerms, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AcceptTerms, "", new { @class = "text-danger" })
+                                            <span>By clicking the box you consent to receiving calls and e-mails from Visual Network Solutions regarding products and services at the number and e-mail address provided.</span>
+                                        </div>
+
+                                        <div class="form-group col-md-12">
+                                            <div class="f1-buttons modal-footer">
+                                                <button type="button" class="btn btn-previous">Previous</button>
+                                                <input type="submit" value="Submit" class="btn f1-btn btn-next" />
+                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>

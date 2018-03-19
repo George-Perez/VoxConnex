@@ -39,23 +39,23 @@ namespace VoxConnex.Models
         public string ContactName { get; set; }
 
         //DISABLED FOR NOW Do we really need their phyiscal address or can you call them later?
-        //[Required(ErrorMessage = "Field can't be empty")]
-        //[Display(Name = "Street")]
-        //public string Street1 { get; set; }
+        [Required(ErrorMessage = "Field can't be empty")]
+        [Display(Name = "Street")]
+        public string Street1 { get; set; }
 
-        //[Display(Name = "Apt")]
-        //public string Street2 { get; set; }
+        [Display(Name = "Ste,Bldg,Mail Stop(Optional)")]
+        public string Street2 { get; set; }
 
-        //[Required(ErrorMessage = "Field can't be empty")]
-        //[Display(Name = "City")]
-        //public string CityName { get; set; }
+        [Required(ErrorMessage = "Field can't be empty")]
+        [Display(Name = "City")]
+        public string CityName { get; set; }
 
-        //[Display(Name = "State")]
-        //public string State { get; set; }
+        [Display(Name = "State")]
+        public string State { get; set; }
 
-        //[Required(ErrorMessage = "Field can't be empty")]
-        //[Display(Name = "Zipcode")]
-        //public int Zipcode { get; set; }
+        [Required(ErrorMessage = "Field can't be empty")]
+        [Display(Name = "Zipcode")]
+        public int Zipcode { get; set; }
 
         [Required(ErrorMessage = "Field can't be empty")]
         [Display(Name = "Phone Number")]
@@ -66,8 +66,9 @@ namespace VoxConnex.Models
         public string Email { get; set; }
 
         //Disabled accept terms until you have terms to accept
-        //[Required(ErrorMessage = "Field can't be empty")]
-        //public bool AcceptTerms { get; set; }
+        [Required(ErrorMessage = "Field can't be empty")]
+        [Display(Name = "")]
+        public bool AcceptTerms { get; set; }
 
     }
 }
