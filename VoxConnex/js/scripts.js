@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
     	var progress_line = $(this).parents('.f1').find('.f1-progress-line');
     	
     	// fields validation
-    	parent_fieldset.find('input[type="text"], input[type="password"], textarea').each(function() {
+        parent_fieldset.find('input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea').each(function() {
             if ($(this).val() == "") {
                 if (!$(this).hasClass("optional")) {
                     $(this).addClass('input-error');
@@ -62,11 +62,6 @@ jQuery(document).ready(function() {
     			$(this).removeClass('input-error');
 
             }
-            //if ($(this).val() != "") {
-            //    $(this).removeClass('input-error');
-            //}
-
-    	
     	});
     	// fields validation
     	
@@ -107,7 +102,7 @@ jQuery(document).ready(function() {
     $('.f1').on('submit', function(e) {
     	
     	// fields validation
-    	$(this).find('input[type="text"], input[type="password"], textarea').each(function() {
+        $(this).find('input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea').each(function() {
     		if( $(this).val() == "" ) {
     			e.preventDefault();
     			$(this).addClass('input-error');

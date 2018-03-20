@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace VoxConnex.Models
 {
@@ -51,7 +52,24 @@ namespace VoxConnex.Models
         public string CityName { get; set; }
 
         [Display(Name = "State")]
-        public string State { get; set; }
+        public int State { get; set; }
+
+
+        //I'm trying to add states as a dropdown list. I'll have to work ont his tonight
+        //public class State
+        //{
+        //    public int Id { get; set; }
+        //    public string Name { get; set; }
+        //}
+
+
+        //private readonly List<State> _states;
+
+        //public IEnumerable<SelectListItem> USStates
+        //{
+        //    get { return new SelectList(_states, "Id", "Name"); }
+        //}
+
 
         [Required(ErrorMessage = "Field can't be empty")]
         [Display(Name = "Zipcode")]
