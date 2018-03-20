@@ -37,7 +37,7 @@
                     <h2 class="typed">Solutions For Todays Small Business.</h2>
                 </div>
                 <p class="text-light mb-5">Offering taylored voice solutions to me the needs and budget of your business.</p>
-                <a class="btn btn-outline-success btn-xl js-scroll-trigger" href="#about">Learn More</a>
+                <a class="btn btn-outline-success btn-xl" href="#about">Learn More</a>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
                 <h2 class="section-heading text-white">About VoxConnex</h2>
                 <hr class="light my-4">
                 <p class="text-faded mb-4">The VoxConnex product is our revolutionary voice paltform. With the advancments in interect connectivity we can leverage your internet connection to save you money and give you more features and functionality for your business. VoxConnex can be configured as a Hosted PBX, SIP trunks and a Virtual Phone System for the one man business. </p>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+                <a class="btn btn-light btn-xl sr-button" href="#services">Get Started!</a>
             </div>
         </div>
     </div>
@@ -115,7 +115,7 @@
                 <button type="button" class="btn btn-success btn-block">Contact us</button>
             </div>
         </div>
-        <div class="card mb-4 box-shadow   card-fixed-width transistion-up">
+        <div class="card mb-4 box-shadow card-fixed-width transistion-up">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Virtual PBX</h4>
             </div>
@@ -136,7 +136,7 @@
 <section id="quote" class="bg-dark text-white">
     <div class="container text-center ">
         <h2 class="typed mb-4">Get your custom voice quote today!</h2>
-        <a class="btn btn-light btn-xl js-scroll-trigger" data-toggle="modal" data-target=".bd-example-modal-lg" href="" data-whatever="">Get Started!</a>
+        <a class="btn btn-light btn-xl js-scroll-trigger sr-button" data-toggle="modal" data-target=".bd-example-modal-lg" href="" data-whatever="">Get Started!</a>
     </div>
 
 
@@ -241,8 +241,6 @@
                                                 @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-
                                         <div class="form-group text-green col-md-12">
                                             @Html.LabelFor(model => model.ContactName, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
@@ -250,16 +248,13 @@
                                                 @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-
                                         <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12 text-green">
-                                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-green"} })
+                                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-green" } })
                                                 @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger text-green" })
                                             </div>
                                         </div>
-
                                         <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
@@ -267,55 +262,54 @@
                                                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-                                    </div>
-
-
-                                    @*These extra calls below this line are turned off for now. Do you really need their address or can you contact them and get that information later?*@
-
-                                    @*<div class="form-group text-green col-md-4">
+                                        <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.Street1, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.Street1, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.Street1, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-                                        <div class="form-group text-green col-md-4">
+                                        <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.Street2, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.Street2, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.Street2, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-                                        <div class="form-group text-green col-md-4 ">
+                                        <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.CityName, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.CityName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
-                                        <div class="form-group text-green col-md-4 ">
+                                        <div class="form-group text-green col-md-6 ">
                                             @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
-
                                         <div class="form-group text-green col-md-4">
                                             @Html.LabelFor(model => model.Zipcode, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
                                                 @Html.EditorFor(model => model.Zipcode, new { htmlAttributes = new { @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.Zipcode, "", new { @class = "text-danger" })
                                             </div>
-                                        </div>*@
+                                        </div>
+                                        <div class="custom-control text-green custom-checkbox col-md-12">
 
-                                    <div class="form-group">
-                                        <div class="f1-buttons modal-footer">
-                                            <button type="button" class="btn btn-previous">Previous</button>
-                                            <input type="submit" value="Submit" class="btn f1-btn btn-next" />
+                                            <div class="custom-control-indicator text-green"></div>
+                                            @Html.CheckBoxFor(model => model.AcceptTerms, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AcceptTerms, "", new { @class = "text-danger" })
+                                            <span>By clicking the box you consent to receiving calls and e-mails from Visual Network Solutions regarding products and services at the number and e-mail address provided.</span>
+                                        </div>
+
+                                        <div class="form-group col-md-12">
+                                            <div class="f1-buttons modal-footer">
+                                                <button type="button" class="btn btn-previous">Previous</button>
+                                                <input type="submit" value="Submit" class="btn f1-btn btn-next" />
+                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -344,16 +338,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 ml-auto text-center">
+            <div class="col-lg-4 ml-auto text-center sr-contact">
                 <i class="fa fa-phone fa-3x mb-3"></i>
                 <p>210-233-9880</p>
             </div>
-            <div class="col-lg-4 ml-auto text-center">
+            <div class="col-lg-4 ml-auto text-center sr-contact">
                 <i class="fa fa-compass fa-3x mb-3"></i>
                 <p>4115 Medical Dr <br />San Antonio,Texas 78229</p>
             </div>
-            <div class="col-lg-4 mr-auto text-center">
-                <i class="fa fa-envelope-o fa-3x mb-3"></i>
+            <div class="col-lg-4 mr-auto text-center sr-contact">
+                <i class="fa fa-envelope fa-3x mb-3"></i>
                 <p>
                     <a href="mailto:your-office@visolutions.net">info@visolutions.net</a>
                 </p>
