@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -29,10 +30,17 @@ namespace VoxConnex.Models
         [Display(Name = "Location Amount")]
         public int HowManyLocations { get; set; }
 
-        [Required(ErrorMessage = "Field can't be empty")]
+
+
+        //string _companyName = "Company name";
+        [Required(ErrorMessage = "You must type in a valid company name.")]
         [Display(Name = "Company Name")]
+        [DefaultValue("Company name")]
         //[RegularExpression("/^[.@&]?[a - zA - Z0 - 9] +[!.@&()]?[a - zA - Z0 - 9!()] +/", ErrorMessage = "You must type in a valid company name.")]
-        public string CompanyName { get; set; }
+        public string CompanyName
+        {
+            get;set;
+        }
 
         [Required(ErrorMessage = "Field can't be empty")]
         [Display(Name = "Contact Name")]
