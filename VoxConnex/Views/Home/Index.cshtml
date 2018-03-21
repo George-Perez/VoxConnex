@@ -238,49 +238,50 @@
                                         <div class="form-group text-green col-md-12">
                                             @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
-                                                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Company name" } })
+                                                <input class="form-control textfield-0 text-box single-line" data-val="true" data-val-required="You must type in a valid company name." id="CompanyName" name="CompanyName" type="text" value="Company name" placeholder="Company name">
+                                                @*@Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control textfield-0"} })*@
                                                 @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="form-group text-green col-md-12">
                                             @Html.LabelFor(model => model.ContactName, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
-                                                @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First and last name" } })
+                                                @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control textfield-1", @placeholder = "First and last name", @Value = "valuePlaceholder" } })
                                                 @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12 text-green">
-                                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-green", @placeholder = "Contact number" } })
+                                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-green textfield-2", @placeholder = "Contact number", @Value = "" } })
                                                 @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger text-green" })
                                             </div>
                                         </div>
                                         <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
-                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text-green", @placeholder = "mail@example.com" } })
+                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text-green textfield-3", @Value = "mail@example.com" } })
                                                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.Street1, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
-                                                @Html.EditorFor(model => model.Street1, new { htmlAttributes = new { @class = "form-control", @placeholder = "Street name" } })
+                                                @Html.EditorFor(model => model.Street1, new { htmlAttributes = new { @class = "form-control textfield-4", @placeholder = "Street name", @Value = "valuePlaceholder" } })
                                                 @Html.ValidationMessageFor(model => model.Street1, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.Street2, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
-                                                @Html.EditorFor(model => model.Street2, new { htmlAttributes = new { @class = "form-control", @placeholder = "Apt, Suite, or Bldg number" } })
+                                                @Html.EditorFor(model => model.Street2, new { htmlAttributes = new { @class = "form-control", @placeholder = "Apt, Suite, or Bldg number", @Value = "valuePlaceholder" } })
                                                 @Html.ValidationMessageFor(model => model.Street2, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="form-group text-green col-md-6">
                                             @Html.LabelFor(model => model.CityName, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
-                                                @Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control", @placeholder = "City" } })
+                                                @Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control textfield-5", @placeholder = "City", @Value = "valuePlaceholder" } })
                                                 @Html.ValidationMessageFor(model => model.CityName, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
@@ -350,7 +351,7 @@
                                         <div class="form-group text-green col-md-4 ">
                                             @Html.LabelFor(model => model.Zipcode, htmlAttributes: new { @class = "control-label col-md-12" })
                                             <div class="col-md-12">
-                                                @Html.EditorFor(model => model.Zipcode, "Text", new { htmlAttributes = new { @class = "form-control", @placeholder = "Zipcode" } })
+                                                @Html.EditorFor(model => model.Zipcode, "Text", new { htmlAttributes = new { @class = "form-control textfield-6", @placeholder = "Zipcode", @Value = "valuePlaceholder" } })
                                                 @Html.ValidationMessageFor(model => model.Zipcode, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
