@@ -432,6 +432,7 @@
     <Content Include="scss\_services.scss" />
     <Content Include="scss\_variables.scss" />
     <Content Include="Views\QuoteQuestionnaires\Create-old.cshtml" />
+    <Content Include="Views\Shared\Quote.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

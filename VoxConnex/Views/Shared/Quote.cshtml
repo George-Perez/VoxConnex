@@ -1,0 +1,887 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Proposal</title>
+    <style type="text/css">
+{literal}
+/* reset */
+*
+{
+    border: 0;
+    box-sizing: content-box;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Wire Framing
+================================================== */
+.ph-grey{
+    background-color: #EEEEEE;
+    border-radius: 3px 3px 3px 3px;
+    line-height: 40px;
+    min-height: 40px;
+    text-align: center;
+    width: 100%;
+    height:100%;
+    display: block;
+}
+
+/* Base
+================================================== */
+html { font: 12px/1 'Open Sans', sans-serif; overflow: auto; }
+html { background: #999; cursor: default; }
+
+body { box-sizing: border-box; margin: 0 auto; padding: .25in; overflow:hidden; width: 8.5in;}
+body { background: #FFF;  }
+
+.clear {clear:both;}
+
+/* Headings
+================================================== */
+h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #000; }
+
+h1 { font-size: 48px; line-height: 1; margin-bottom: 8px; }
+h2 { font-size: 32px; margin-bottom: 12px; }
+h3 { font-size: 24px; line-height: 1; margin-bottom: 16px; }
+h4 { font-size: 19px; line-height: 1.25; margin-bottom: 20px; }
+h5 { font-size: 16px; font-weight: bold; margin-bottom: 20px; }
+h6 { font-size: 16px; font-weight: bold; }
+
+h1 img, h2 img, h3 img,
+h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+/* Text elements
+================================================== */
+p           { margin: 0 0 24px; }
+/*
+    These can be used to pull an image at the start of a paragraph, so
+    that the text flows around it (usage: <p><img class="left">Text</p>)
+ */
+.left              { float: left !important; }
+p .left            { margin: 24px 24px 24px 0; padding: 0; }
+.right             { float: right !important; }
+p .right         { margin: 24px 0 24px 24px; padding: 0; }
+
+a:focus,
+a:hover     { color: #09f; }
+a           { color: #06c; text-decoration: underline; }
+
+blockquote  { margin: 24px; color: #666; font-style: italic; }
+strong,dfn    { font-weight: bold; }
+em,dfn      { font-style: italic; }
+sup, sub    { line-height: 0; }
+
+abbr,
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 24px; font-style: italic; }
+del         { color:#666; }
+
+pre         { margin: 24px 0; white-space: pre; }
+pre,code,tt { font: 16px 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+
+/* Lists
+================================================== */
+li ul,
+li ol       { margin: 0; }
+ul, ol      { margin: 0 24px 24px 0; padding-left: 24px; }
+
+ul          { list-style-type: none; }
+ol          { list-style-type: decimal; }
+
+dl          { margin: 0 0 24px 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 24px;}
+
+/* Helpers
+================================================== */
+small {font-size: 85%;}
+p.black{color:#000000;}
+p.red {color:red;}
+.alert-danger, .alert-error {background-color: #dddddd;border-color: #dddddd;color: #000000}
+.alert {border-radius: 4px 4px 4px 4px;margin-bottom: 20px;padding: 26px 35px 8px 14px;}
+.alert p {color: #000000; font-weight: bold; font-size: 12px; line-height: 20px; }
+img {
+    border: 0 none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.fl {float:left;}
+.fr {float:right;}
+.clear {clear:both;}
+
+/* Fluid Columns
+================================================== */
+.row:before, .row:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.row:after {
+    clear: both;
+}
+
+.one_half{ width:48%; }
+.one_third{ width:30.66%; }
+.two_third{ width:65.33%; }
+.one_fourth{ width:22%; }
+.three_fourth{ width:74%; }
+.one_fifth{ width:16.8%; }
+.two_fifth{ width:37.6%; }
+.three_fifth{ width:58.4%; }
+.four_fifth{ width:67.2%; }
+.one_sixth{ width:13.33%; }
+.five_sixth{ width:82.67%; }
+.one_half,.one_third,.two_third,.three_fourth,.one_fourth,.one_fifth,.two_fifth,.three_fifth,.four_fifth,.one_sixth,.five_sixth{ position:relative; margin-right:4%; float:left; }
+.fl-last{ margin-right:0 !important; clear:right; }
+.fl-col-clearboth {clear:both;display:block;font-size:0;height:0;line-height:0;width:100%;}
+
+/* Content editable
+================================================== */
+*[contenteditable] { border-radius: 0.25em; min-width: 1em; outline: 0; }
+
+*[contenteditable] { cursor: pointer; }
+
+*[contenteditable]:hover, *[contenteditable]:focus, td:hover *[contenteditable], td:focus *[contenteditable], img.hover { background: #FFFF99; }
+
+/* --*[contenteditable]:hover, *[contenteditable]:focus, td:hover *[contenteditable], td:focus *[contenteditable], img.hover { background: #DEF; box-shadow: 0 0 1em 0.5em #DEF; }-- */
+
+span[contenteditable] { display: inline-block; }
+
+/* Header
+================================================== */
+header { margin: 0 0 3em; }
+header:after { clear: both; content: ""; display: table; }
+
+.logo { display:block; float:left; margin: 0 0 1em 0; max-height: 25%; position: relative; }
+header h3 {margin-top: 30px; font-size: 17px; font-weight: bold;}
+
+header address { font-size: 100%; font-style: normal; line-height: 1.25; margin: 0 1em 1em 0; }
+header address p { margin: 0 0 0.25em; }
+header img { max-height: 100%; max-width: 100%; }
+header input { cursor: pointer; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; height: 100%; left: 0; opacity: 0; position: absolute; top: 0;  }
+header .date { font-size: 75%; font-style: normal; line-height: 1.25; margin: 0 1em 1em 0; }
+header .date p { margin: 0 0 0.25em; }
+
+table.header {margin-left: 0px;}
+table.header td:first-child  {text-align: right;padding-right: 10px;font-weight: bold;}
+table.header td:last-child  {text-align: left;}
+table.header td {font-size: 12px;}
+
+table.header tr th{width:132px !important;font-weight: bold;text-align: right; padding-right: 10px;vertical-align: top;}
+
+/* Section
+================================================== */
+
+/* Article
+================================================== */
+article, article address, table.meta, table.inventory { margin: 0px; }
+article:after { clear: both; content: ""; display: table; }
+article h1 { clip: rect(0 0 0 0); position: absolute; }
+article p {font-size: 12px; line-height: 14px; color: #000000;}
+
+article address { float: left; font-size: 125%; font-weight: bold; }
+
+/* Section #1 Tables
+================================================== */
+.section1{margin-bottom: 30px;}
+.section1 table.table1{float:right;}
+.section1 table.table1 thead {height: 30px;}
+.section1 table.table1 td{text-align: right;padding-right: 10px;font-weight: bold;padding-top:5px;padding-bottom:0px;}
+
+.section1 table.table2 {margin-left:0px;width:300px; border: 1px solid #000000;padding: 0!important;}
+.section1 table.table2 thead {height: 30px;}
+.section1 table.table2 thead tr th{background-color:#000000; color:#FFFFFF; font-size: 12px; font-weight: normal; height: 20px; }
+
+.section1 table.table2 tbody {margin-top: 10px;}
+.section1 table.table2 td{text-align: left;padding-left:10px;padding-bottom: 0;
+    padding-right: 10px;
+    padding-top: 7px;font-weight: normal;}
+
+/* Section #2 Tables
+================================================== */
+.section2 table { font-size: 100%; table-layout: fixed; width: 100%; }
+.section2 th, .section td { padding: 0.5em; position: relative; text-align: left; }
+.section2 th { background:#ECECEC; height: 20px; }
+.section2 td { border-bottom: 0px solid #BBBBBB;font-size: 12px;line-height: 14px;padding: 10px;}
+.section2 th.group {background-color: #666; color: #ffffff; height: 20px;font-size: 12px;font-weight: normal;}
+
+/* Section #3 MRC & NRC = Datagrid
+================================================== */
+.section3 h5 {margin-bottom: 10px;}
+.datagrid table thead tr th:nth-child(1) { width: 4%; }
+.datagrid table thead tr th:nth-child(2) { width: 13%; }
+.datagrid table thead tr th:nth-child(3) { width: 44%; }
+.datagrid table thead tr th:nth-child(4) { width: 8%; }
+.datagrid table thead tr th:nth-child(5) { width: 8%; }
+.datagrid table thead tr th:nth-child(6) { width: 8%; }
+.datagrid table thead tr th:nth-child(7) { width: 8%; }
+
+.datagrid table tbody tr td:nth-child(1) {text-align: center;}
+.datagrid table tbody tr td:nth-child(2) {text-align: left;}
+.datagrid table tbody tr td:nth-child(3) {text-align: left;}
+.datagrid table tbody tr td:nth-child(4), .datagrid table thead tr th:nth-child(4) {text-align: right;}
+.datagrid table tbody tr td:nth-child(5), .datagrid table thead tr th:nth-child(5) {text-align: right;}
+.datagrid table tbody tr td:nth-child(6), .datagrid table thead tr th:nth-child(6) {text-align: right;}
+.datagrid table tbody tr td:nth-child(7), .datagrid table thead tr th:nth-child(7) {text-align: right;}
+
+.datagrid table { border-collapse: collapse; text-align: left; width: 100%; }
+.datagrid {border: 1px solid #07a51b;font: normal 12px Arial, Helvetica, sans-serif; background: #fff; overflow: hidden;  }
+.datagrid table td, .datagrid table th { padding: 3px 5px; }
+.datagrid table thead th {background-color:#000000; color:#FFFFFF; font-size: 12px; font-weight: normal; border-left: 1px solid #0070A8;  }
+.datagrid table thead th:first-child { border: none; }
+.datagrid table tbody td, .datagrid table tbody th { color: #000000; font-size: 12px;border-bottom: 1px solid #E1EEF4;font-weight: normal;  vertical-align: top;}
+.datagrid table tbody td:first-child { border-left: none; }
+.datagrid table tbody tr:last-child td { border-bottom: none; }
+
+.subtotal {width:34%; float:right; margin-bottom: 10px;}
+.subtotal table {width:101%}
+.subtotal table thead tr th:nth-child(1),
+.subtotal table thead tr th:nth-child(2) { width: 50%; text-align: right;}
+
+.subtotal table tbody tr td:nth-child(1),
+.subtotal table tbody tr td:nth-child(2) {text-align: right;}
+
+/* Section #4 Balance Table
+================================================== */
+.section4 {margin-top: 10px !important;}
+.section4 th, .section td { border-width: 1px; padding: 0.5em; position: relative; text-align: left; }
+.section4 th, .section td { }
+.section4 td { font-size: 12px;padding: 8px;}
+.section4 h6 {border-bottom: solid 1px #000; padding-bottom: 15px; font-size: 14px; color: #000;}
+.ckbox{ margin-top: 15px !important;}
+
+.section4 .col1{ width:398px; float: left;margin-right: 15px;
+-bracket-:hack(;
+        width:350px;
+    );
+}
+.section4 .col2{ width:194px; float: left;margin-right: 15px;}
+.section4 .col3{ width:194px; float: left;}
+
+/* T-Balance - This is the Final Balance Tables and Notes
+================================================== */
+table.notes tbody tr td div {min-height: 162px; line-height: 16px; text-align: left;}
+
+.datagrid table.total tbody tr td:nth-child(2) {text-align: left; width: 10%;}
+.datagrid table.total th {padding: 3px 5px;}
+.datagrid table.total th,
+.datagrid table.total td { text-align: right; }
+
+
+/* Credit Card Authorization Form
+================================================== */
+
+.ccauth h6 {border-bottom: solid 1px #000; padding-bottom: 15px; font-size: 14px; color: #000;}
+.ccauth em {font-weight: bold; font-style: normal;}
+
+span.sign_here {
+    border-bottom: solid 1px #000;
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+}
+
+/* javascript */
+.add
+{
+    border-width: 1px;
+    display: block;
+    font-size: .8rem;
+    padding: 0.25em 0.5em;
+    float: left;
+    text-align: center;
+    width: 7.5em;
+    background: #9AF;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    background-image: -moz-linear-gradient(#00ADEE 5%, #0078A5 100%);
+    background-image: -webkit-linear-gradient(#00ADEE 5%, #0078A5 100%);
+    border-radius: 0.5em;
+    border-color: #0076A3;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 -1px 2px rgba(0,0,0,0.333);
+    margin: -2.5em 0 0;
+    width: 7.5em;
+    height: 1.5em;
+}
+.add:hover { background: #00ADEE; }
+
+.cut {background: url("btn-delete.gif") no-repeat scroll 0 0 transparent;height: 12px;width: 15px;
+    display: block;overflow: hidden;text-indent: -9999px;float: left;margin: 3px 3px 0px 0px;}
+
+tr:hover .cut { opacity: 1; }
+a.add  {text-decoration: none;}
+a:hover.add  {color:#fff;}
+
+/*PAGE BREAK!!!*/
+.pbk{page-break-before: always;}
+.datagrid table tr td { page-break-inside: avoid;  }
+
+div.authform-label {
+    width: 155px;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    /*border: #ff0000 1px solid;*/
+    margin-top: 15px;
+}
+div.authform-field {
+    /*border: #0000ff 1px solid;*/
+    border-bottom: #000000 1px solid;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 165px;
+    width: 400px;
+    margin-top: 15px;
+}
+div.authform-sig {
+    font-size: 16px;
+    font-weight: bold;
+    border-top: #000000 2px solid;
+    padding-top: 3px;
+}
+
+@media print {
+    /*
+    * { -webkit-print-color-adjust: exact; }
+    html { background: none; padding: 0; }
+
+    .datagrid table thead th{background-color: #000000; color: #ffffff;}
+    .section4 {margin: 100mm 0 0 0m;}
+    .section4 {margin-top: 50px !important;}
+
+
+    section table.inventory thead tr th, section table.balance tr th, .section1 table.table2 th
+    {background-color:#000000; border-left:solid 0px #000000; border-right:solid 0px #000000; color: #ffffff;}
+    section table.inventory td {background: none; color: #000000; border-bottom: solid 1px #000000;}
+    section .section4 table thead tr td {background-color: #000000; color: #ffffff;}
+
+    article.section4 table thead tr td, article.section4 table.notes thead tr td  {background-color: #000000; color: #ffffff;}
+
+    .alert-danger, .alert-error {background-color: #ffffff;border-color: #000000;color: #000000}
+    .alert p {color: #000000; font-weight:normal;}
+
+    section table thead tr th {background:#000000; color:#ffffff;}
+
+    .datagrid table thead th:first-child { border: none; }
+
+.datagrid table tbody td, .datagrid table tbody th { color: #000000; bacground-color: #ffffff;
+}
+    */
+
+}
+
+* { -webkit-print-color-adjust: exact; }
+html { background: none; padding: 0; }
+body { box-shadow: none; /*padding: 35px 15px;*//*margin: .25in .25in .5in .25in;*/ }
+
+@page{size; auto; margin: 0.5in 0.3in;}
+
+/*
+.datagrid table thead th, .datagrid table thead, .datagrid table thead th, .section1 table.table2 thead tr th, .subtotal table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');background-color:#006699; color:#FFFFFF; font-size: 12px; font-weight: normal; border-left: 1px solid #0070A8; }
+
+*/
+.datagrid table thead th, .datagrid table thead, .datagrid table thead th, .section1 table.table2 thead tr th, .subtotal table thead th {background-color:#07a51b; color:#FFFFFF; font-size: 12px; font-weight: normal; border-left: 1px solid #07a51b; }
+.datagrid table thead th:first-child { border: none; }
+
+.section1 table.table2 thead tr th{background-color:#07a51b; color:#FFFFFF; font-size: 12px; font-weight: normal; }
+
+.alert-danger, .alert-error {background-color: white;border:solid 1px black;color:black;}
+.alert p {color: black; font-weight:normal;}
+
+.section1 table.table2 {border:solid 1px #07a51b;}
+.section1 table.table2 thead tr th {border-left: 1px solid #07a51b;}
+
+.section1 table.table2 th{text-align: center; background-color: #07a51b; height: 20px;}
+
+.pbk{page-break-before: always;margin-top: .25in;}
+
+.datagrid table tr {
+page-break-inside: avoid;
+}
+{/literal}
+    </style>
+    <!--
+            <script type="text/javascript">
+    {literal}
+                $().ready(function () {
+                     var marginTop = "75px";
+                    var marginBottom = "85px";
+
+                page.paperSize = {
+                    format: 'A4',
+                    margin: {
+                            top: marginTop,
+                            bottom: marginBottom
+                        },
+                    orientation: 'portrait'};
+                  });
+
+    {/literal}
+            </script>
+            -->
+</head>
+<body>
+    <span class="logo"><img alt="" src="{$embedded_logo}"></span>
+    <h3 style="float:right;">Service Activation Form</h3>
+    <div class="fl-col-clearboth"></div><br>
+    <section>
+
+        <header>
+            <div class="company fl">
+                <address>
+                    <p><strong>Visual Network Solutions LLC</strong></p>
+                    <p>4115 Medical Dr. Ste.200 <br>San Antonio, Texas 78229</p>
+                    <p>(210)233-9880</p>
+                </address>
+            </div>
+            <div class="fl">
+                <table class="header" style="margin-left:3px;margin-right:3px;">
+                    <tr>
+                        <th>Proposal #:</th>
+                        <td>{$proposal_number}</td>
+                    </tr>
+                    <tr>
+                        <th>Date:</th>
+                        <td>{$proposal_date}</td>
+                    </tr>
+                    <tr>
+                        <th>Quote Valid Until:</th>
+                        <td>{$quote_valid_until}</td>
+                    </tr>
+                    <tr>
+                        <th>Order Type:</th>
+                        <td>Online</td>
+                    </tr>
+                    <tr>
+                        <th>Sales Representative:</th>
+                        <td>Online Quote</td>
+                    </tr>
+                    <tr>
+                        <th>Sales Rep. Email:</th>
+                        <td>vns-office@visolutions.net</td>
+                    </tr>
+                    <tr>
+                        <th>Payment Method:</th>
+                        <td>TBD</td>
+                    </tr>
+                    <tr>
+                        <th>Summary:</th>
+                        <td style="overflow:visible;">{$summary}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fl fl-last" style="width:280px;">
+                <table class="header">
+                    <tr>
+                        <th>Customer Name:</th>
+                        <td>{$customer_name}</td>
+                    </tr>
+                    <tr>
+                        <th>Customer Since:</th>
+                        <td>{$customer_since}</td>
+                    </tr>
+                    <tr>
+                        <th>Contract Start:</th>
+                        <td>{$contract_start}</td>
+                    </tr>
+                    <tr>
+                        <th>Contract Maturity:</th>
+                        <td>{$contract_maturity}</td>
+                    </tr>
+                    <tr>
+                        <th>Term of Commitment:</th>
+                        <td style="overflow:visible;">{$term_of_commitment}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fl-col-clearboth"></div>
+        </header>
+        <h5 style="margin-bottom:5px;">Customer Information</strong></h5>
+        <article class="section1">
+            <div class="fl" style="width: 19%;margin-right:10px !important;">
+                <table class="table2" cellspacing="0" style="border:solid 1px #fff; float:right; width:200px; ">
+                    <thead>
+                    <th style="background-color:#fff;border-left:0px;">Billing Address</th>
+                    </thead>
+                    <tbody>
+                        <tr><td style="text-align:right;"><strong>Company:</strong></td></tr>
+                        <tr><td style="text-align:right;"><strong>Contact:</strong></td></tr>
+                        <tr><td style="text-align:right;"><strong>Street 1:</strong></td></tr>
+                        <tr><td style="text-align:right;"><strong>Street 2:</strong></td></tr>
+                        <tr><td style="text-align:right;"><strong>City, State, ZIP Code:</strong></td></tr>
+                        <tr><td style="text-align:right;"><strong>Phone:</strong></td></tr>
+                        <tr><td style="text-align:right;"><strong>Fax:</strong></td></tr>
+                        <tr><td style="text-align:right;"><strong>Mobile:</strong></td></tr>
+                        <tr><td style="text-align:right;padding-bottom:5px;"><strong>Email:</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fl">
+                <table class="table2" cellspacing="0">
+                    <thead>
+                    <th>Billing Address</th>
+                    </thead>
+                    <tbody>
+                        <tr><td>{$billing_company} </td></tr>
+                        <tr><td>{$billing_contact} </td></tr>
+                        <tr><td>{$billing_street_address1} </td></tr>
+                        <tr><td>{$billing_street_address2} </td></tr>
+                        <tr><td>{$billing_city}, {$billing_state} {$billing_zip} </td></tr>
+                        <tr><td>{format_phone_number number=$billing_phone} </td></tr>
+                        <tr><td>{format_phone_number number=$billing_fax} </td></tr>
+                        <tr><td>{format_phone_number number=$billing_mobile} </td></tr>
+                        <tr><td style="padding-bottom:5px;">{$billing_email} </td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fr fl-last">
+                <table class="table2" cellspacing="0">
+                    <thead>
+                    <th>Shipping Address</th>
+                    </thead>
+                    <tbody>
+                        <tr><td>{$shipping_company} </td></tr>
+                        <tr><td>{$shipping_contact} </td></tr>
+                        <tr><td>{$shipping_street_address1} </td></tr>
+                        <tr><td>{$shipping_street_address2} </td></tr>
+                        <tr><td>{$shipping_city}, {$shipping_state} {$shipping_zip} </td></tr>
+                        <tr><td>{format_phone_number number=$shipping_phone} </td></tr>
+                        <tr><td>{format_phone_number number=$shipping_fax} </td></tr>
+                        <tr><td>{format_phone_number number=$shipping_mobile} </td></tr>
+                        <tr><td style="padding-bottom:5px;">{$shipping_email} </td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fl=col-clearboth"></div>
+        </article>
+
+        <!-- Section #2 - MRC & NRC
+        ================================================== -->
+        <article class="section3">
+            <h5>Monthly Recurring Charges (MRC)</h5>
+            <div class="datagrid">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>QTY</th>
+                            <th>Item ID</th>
+                            <th>Description</th>
+                            <th>Monthly</th>
+                            <th>Tax</th>
+                            <th nowrap>Monthly Ext.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {foreach from=$item_list key=key item=item}
+                        {if $item.is_recurring &&  '' == $item.parent_id}
+                        <tr>
+                            <td>{$item.quantity}</td>
+                            <td>{$item.item_number}</td>
+                            <td>{$item.title}<br />{$item.description}</td>
+                            <td class="txt-right"><span data-prefix>$</span>{$item.price}</td>
+                            <td>{$item.tax}</td>
+                            <td class="txt-right"><span data-prefix>$</span>{$item.expanded_price}</td>
+                        </tr>
+                        <!-- bundle children -->
+                        {foreach from=$item.children key=child_key item=child}
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{$child.quantity} X {$child.item_number} - {$child.description}</td>
+                            <td class="txt-right"><span data-prefix></span></td>
+                            <td></td>
+                            <td class="txt-right"><span data-prefix></span></td>
+                        </tr>
+                        {/foreach}
+                        {/if}
+                        {/foreach}
+                    </tbody>
+                </table>
+            </div>
+            <div class="datagrid subtotal">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>MRC Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span data-prefix>$</span>{$mrc_total}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="clear"></div>
+
+            <h5>Non-Recurring Charges (NRC)</h5>
+            <div class="datagrid">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>QTY</th>
+                            <th>Item ID</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Tax</th>
+                            <th>Price Ext.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {foreach from=$item_list key=key item=item}
+                        {if ! $item.is_recurring}
+                        <tr>
+                            <td>{$item.quantity}</td>
+                            <td>{$item.item_number}</td>
+                            <td>{$item.title}<br />{$item.description}</td>
+                            <td class="txt-right"><span data-prefix>$</span>{$item.price}</td>
+                            <td>{$item.tax}</td>
+                            <td class="txt-right"><span data-prefix>$</span>{$item.expanded_price}</td>
+                        </tr>
+                        {/if}
+                        {/foreach}
+                    </tbody>
+                </table>
+            </div>
+            <div class="datagrid subtotal">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NRC Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span data-prefix>$</span>{$nrc_total}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="clear"></div>
+
+        </article>
+
+        <!-- Section #4 - Totals - NO BREAK!!!
+        ================================================== -->
+        <div class="pbk">
+            <span class="logo"><img alt="" src="{$embedded_logo}"></span>
+            <h3 style="float:right;">Service Activation Form</h3>
+            <div class="fl-col-clearboth"></div><br>
+            <section>
+
+                <header>
+                    <div class="company fl">
+                        <address>
+                            <p><strong>{$provider_company_name}</strong></p>
+                            <p>{$provider_address1} {$provider_address2}<br>{$provider_city}, {$provider_state} {$provider_zip}</p>
+                            <p>{format_phone_number number=$provider_phone}</p>
+                        </address>
+                    </div>
+                    <div class="fl">
+                        <table class="header" style="margin-left:3px;margin-right:3px;">
+                            <tr>
+                                <th>Proposal #:</th>
+                                <td>{$proposal_number}</td>
+                            </tr>
+                            <tr>
+                                <th>Date:</th>
+                                <td>{$proposal_date}</td>
+                            </tr>
+                            <tr>
+                                <th>Quote Valid Until:</th>
+                                <td>{$quote_valid_until}</td>
+                            </tr>
+                            <tr>
+                                <th>Order Type:</th>
+                                <td>{$order_type}</td>
+                            </tr>
+                            <tr>
+                                <th>Sales Representative:</th>
+                                <td>{$sales_representative}</td>
+                            </tr>
+                            <tr>
+                                <th>Sales Rep. Email:</th>
+                                <td>{$sales_rep_email}</td>
+                            </tr>
+                            <tr>
+                                <th>Payment Method:</th>
+                                <td>{$payment_method}</td>
+                            </tr>
+                            <tr>
+                                <th>Summary:</th>
+                                <td style="overflow:visible;">{$summary}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="fl fl-last" style="width:280px;">
+                        <table class="header">
+                            <tr>
+                                <th>Customer Name:</th>
+                                <td>{$customer_name}</td>
+                            </tr>
+                            <tr>
+                                <th>Customer Since:</th>
+                                <td>{$customer_since}</td>
+                            </tr>
+                            <tr>
+                                <th>Contract Start:</th>
+                                <td>{$contract_start}</td>
+                            </tr>
+                            <tr>
+                                <th>Contract Maturity:</th>
+                                <td>{$contract_maturity}</td>
+                            </tr>
+                            <tr>
+                                <th>Term of Commitment:</th>
+                                <td style="overflow:visible;">{$term_of_commitment}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="fl-col-clearboth"></div>
+                </header>
+                <article class="section4">
+
+                    <div class="col1">
+                        <div class="datagrid">
+                            <table class="notes">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div>{$notes|nl2br}</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col2">
+                        <div class="datagrid">
+                            <table class="total">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" style="text-align:center;">Due at Signing</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Monthly Recurring</th>
+                                        <td><span data-prefix>$</span>{$mrc_due}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-Recurring</th>
+                                        <td><span data-prefix>$</span>{$nrc_due}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sales Tax</th>
+                                        <td><span data-prefix>$</span>{$tax_due}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>USF Due</th>
+                                        <td><span data-prefix>$</span>{$usf_charges_due}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total Due at Signing</th>
+                                        <td><span data-prefix>$</span>{$total_due}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col3">
+                        <div class="datagrid">
+                            <table class="total">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" style="text-align:center;">Summary</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Monthly Recurring</th>
+                                        <td><span data-prefix>$</span>{$mrc_total}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Non-Recurring</th>
+                                        <td><span data-prefix>$</span>{$nrc_total}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sales Tax</th>
+                                        <td><span data-prefix>$</span>{$tax_total}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>USF</th>
+                                        <td><span data-prefix>$</span>{$usf_charges}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total</th>
+                                        <td><span data-prefix>$</span>{$subtotal}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="fl-col-clearboth"></div>
+                    {if ($added_mrc || $removed_mrc || $added_nrc) && $order_type != 'New Proposal'}
+                    <br><br>
+                    <div class="alert alert-error" style="text-align:center; color:#B94A48;">
+                        <p>
+                            Services may have been added to and/or removed from your account. Your signature below indicates your acceptance of these changes. Please see Exhibit A for a summary of the changes to your account.
+                        </p>
+                    </div>
+                    {/if}
+                    <br><br>
+                    <div class="alert alert-error" style="text-align:center; color:#B94A48;">
+                        <p>The undersigned acknowledges that they have received, read, accepted, and agreed to the {$provider_company_name} <a href="http://www.visolutions.net/VoxConnex/styled/Terms.html">Terms of Service</a>, and ALL {$provider_company_name} Terms and Conditions incorporated by this reference.</p>
+                    </div>
+
+                    <br>
+                    <div class="two_third">
+                        <p>Please charge my existing credit card on file: <span style="margin-left:10px;">Yes<img src="https://{$reseller_url}/images/checkbox.png" alt="" width="28" height="26"></span><span style="margin-left:10px;">No<img src="https://{$reseller_url}/images/checkbox.png" alt="" width="28" height="26"></span></p>
+                    </div>
+                    <div class="one_third fl-last"></div>
+                    <div class="fl-col-clearboth"></div>
+                    <br>
+                    <div class="two_third">
+                        <h6>Signature:</h6>
+                    </div>
+                    <div class="one_third fl-last">
+                        <h6>Title:</h6>
+                    </div>
+                    <div class="fl-col-clearboth"></div>
+                    <br><br>
+                    <div class="two_third">
+                        <h6>Print Name:</h6>
+                    </div>
+                    <div class="one_third fl-last">
+                        <h6>Date:</h6>
+                    </div>
+                    <div class="fl-col-clearboth"></div>
+                    <div class="row">
+                        <p><small>Confidential and Proprietary to {$provider_company_name}. This proposal is provided to the Entity(s) and Individual(s) listed above only, and may not be disclosed or forwarded to any other party without the express, written consent of {$provider_company_name}.</small></p>
+                    </div>
+        </div><!-- No Break -->
+        </article>
+    </section>
+</body>
+</html>ḞḀḞḀḞḀḞḀḞḀḞḀḞḀḞ㼀㴽尀孛㘀㈲☀┥☀┥☀┥☀┥☀┥☀┥☀┥☀┥㠀⤲㈀ㄱⰀ⬫㔀㔴㐀ㄲ⼀〮㜀㔶　〯㈀㌲⸀ⴭ☀┥☀┥☀┥☀┥☀┥☀┥☀┥☀┥☀┥☀┥☀┥Ⰰ⨪㬀ⴵᄀ㸣ሀ㴢ᄀ㴢က㬡က㬡ᄀ㬡ሀ㨢ᄀ㠡ᄀ㠡ᄀ㜠ᄀ㜠ကἘጀ‚䨀⬽　ⴭ　ⴭ㈀⼯㌀㌳ⰀⰬḀḞ⠀ḥⴀἪ∀ḡḀḞḀḞ㐀㐴✀✧ḀḞḀḞḀḞḀḞḀḞ
