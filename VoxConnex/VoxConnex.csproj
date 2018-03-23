@@ -184,6 +184,10 @@
     <Compile Include="Migrations\201802281957016_Added Anontations.Designer.cs">
       <DependentUpon>201802281957016_Added Anontations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803230123316_first migration.cs" />
+    <Compile Include="Migrations\201803230123316_first migration.Designer.cs">
+      <DependentUpon>201803230123316_first migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\QuoteQuestionnaire.cs" />
@@ -344,7 +348,9 @@
     <Content Include="vendor\magnific-popup\magnific-popup.css" />
     <Content Include="vendor\scrollreveal\scrollreveal.js" />
     <Content Include="vendor\scrollreveal\scrollreveal.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -456,6 +462,9 @@
     <EmbeddedResource Include="Migrations\201802281957016_Added Anontations.resx">
       <DependentUpon>201802281957016_Added Anontations.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803230123316_first migration.resx">
+      <DependentUpon>201803230123316_first migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
@@ -485,8 +494,7 @@
           <IISUrl>http://localhost:50375/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl>http://localhost:50375/</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
