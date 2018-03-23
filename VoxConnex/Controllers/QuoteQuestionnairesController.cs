@@ -44,6 +44,7 @@ namespace VoxConnex.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,HowManyUsers,NeedPhones,NeedNumber,HowManyNumbersPorting,HowManyLocations,CompanyName,ContactName,Street1,Street2,CityName,State,Zipcode,PhoneNumber,Email,AcceptTerms")] QuoteQuestionnaire quoteQuestionnaire)
+        //public ActionResult Create(QuoteQuestionnaire quoteQuestionnaire)
         {
             if (ModelState.IsValid)
             {
