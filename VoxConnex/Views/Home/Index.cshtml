@@ -1,9 +1,9 @@
 ﻿
 @model VoxConnex.Models.QuoteQuestionnaire
 @*@model Student
-@{*@
-    @*ViewBag.Title = "Home Page";
-}*@
+    @{*@
+@*ViewBag.Title = "Home Page";
+    }*@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
@@ -174,27 +174,32 @@
 
                                 @*FIRST FIELD SET*@
                                 <fieldset>
-                                    <p class="text-green">@Html.LabelFor(model => model.NeedNumber, htmlAttributes: new { @class = "col d-flex justify-content-center" })</p>
+                                    <p class="text-green">@Html.LabelFor(model => model.NeedNumber, htmlAttributes: new { @class = "col d-flex justify-content-center extra-top-9" })</p>
                                     <div class="col d-flex justify-content-center">
                                         <div class="slider-frame btn-group-toggle">
                                             <label class="switch">
                                                 @Html.EditorFor(model => model.NeedNumber)
                                                 @*Don't worry about this warning. We're using the div here to call the slider function*@
                                                 <div class="slider round" id="portnumber-toggle">
-                                                    <div id="slider">
-                                                        <div class="switch-btn" id="switch-btn">
-                                                            <p>no</p>
-                                                            <p>yes</p>
-                                                        </div>
+                                                    <div class="switch-btn">
+                                                        <p id="no">no</p>
+                                                        <p id="yes">yes</p>
                                                     </div>
                                                 </div>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="portnumber">
-                                        @Html.LabelFor(model => model.HowManyNumbersPorting, htmlAttributes: new { @class = "text-green col d-flex justify-content-center" })
+                                        @Html.LabelFor(model => model.HowManyNumbersPorting, htmlAttributes: new { @class = "text-green col d-flex justify-content-center extra-top-20" })
                                         <div class="col d-flex justify-content-center padding-top-bottom">
-                                            @Html.EditorFor(model => model.HowManyNumbersPorting, "Text", new { htmlAttributes = new { @class = "col text-center optional", @style = "max-width: 3rem; padding: 0;" } })
+                                            <input class="form-control col text-center optional how-many-numbers-porting" style="max-width: 3rem; padding: 0;" id="howmanynumbersporting" name="HowManyNumbersPorting" type="number" value="">
+                                            @*@Html.EditorFor(model => model.HowManyNumbersPorting, "Text", new { htmlAttributes = new { @class = "col text-center optional", @style = "max-width: 3rem; padding: 0;" } })*@
+                                            <div class="valid-howmanynumbersporting">
+                                                Thanks!
+                                            </div>
+                                            <div class="invalid-howmanynumbersporting">
+                                                Please type in a valid amount.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="f1-buttons modal-footer">
@@ -205,30 +210,37 @@
 
                                 @*SECOND FIELD SET*@
                                 <fieldset>
-                                    <p class="text-green">@Html.LabelFor(model => model.NeedPhones, htmlAttributes: new { @class = "col d-flex justify-content-center" })</p>
+                                    <p class="text-green">@Html.LabelFor(model => model.NeedPhones, htmlAttributes: new { @class = "col d-flex justify-content-center extra-top-9" })</p>
                                     <div class="col d-flex justify-content-center">
                                         <div class="slider-frame btn-group-toggle">
                                             <label class="switch">
                                                 @Html.EditorFor(model => model.NeedPhones)
                                                 @*Don't worry about the warning below this comment. We're using the div here to call the slider function*@
-                                                <div class="slider round">
+                                                <div class="slider round" id="portnumber-toggle2">
                                                     <div id="slider2">
-                                                        <div class="switch-btn" id="switch-btn2">
-                                                            <p>no</p>
-                                                            <p>yes</p>
+                                                        <div class="switch-btn">
+                                                            <p id="no2">no</p>
+                                                            <p id="yes2">yes</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </label>
                                         </div>
                                     </div>
-                                    @Html.LabelFor(model => model.HowManyUsers, htmlAttributes: new { @class = "text-green col d-flex justify-content-center" })
+                                    @Html.LabelFor(model => model.HowManyUsers, htmlAttributes: new { @class = "text-green col d-flex justify-content-center extra-top-20" })
                                     <div class="col d-flex justify-content-center padding-top-bottom">
-                                        @Html.EditorFor(model => model.HowManyUsers, "Text", new { htmlAttributes = new { @class = "col text-center", @style = "max-width: 3rem; padding: 0;" } })
+                                        <input class="form-control col text-center how-many-users" style="max-width: 3rem; padding: 0;" id="HowManyUsers" name="HowManyUsers" type="number" value="">
+                                        @*@Html.EditorFor(model => model.HowManyUsers, "Text", new { htmlAttributes = new { @class = "col text-center how-many-users", @style = "max-width: 3rem; padding: 0;" } })*@
+                                        <div class="valid-tooltip">
+                                            Thanks!
+                                        </div>
+                                        <div class="invalid-tooltip">
+                                            Please type in a valid amount.
+                                        </div>
                                     </div>
                                     <div class="f1-buttons modal-footer">
                                         <button type="button" class="btn btn-previous">Previous</button>
-                                        <button type="button" class="btn f1-btn btn-next">Next</button>
+                                        <button type="button" class="btn f1-btn btn-next btn-next2">Next</button>
                                     </div>
                                 </fieldset>
 
@@ -237,123 +249,159 @@
                                 <fieldset>
                                     <div class="row">
                                         <div class="form-group text-green col-md-12">
-                                            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-12" })
-                                            <div class="col-md-12">
-                                              @*  <input class="form-control textfield-0 text-box single-line" data-val="true" data-val-required="You must type in a valid company name." id="CompanyName" name="CompanyName" type="text" value="Company name" placeholder="Company name">*@
-                                                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control textfield-0"} })
-                                                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                                            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "p-0 m-0 control-label col-md-12" })
+                                            <input class="form-control col text-left textfield-0 company-name" id="companyname" name="CompanyName" type="text" value="">
+                                            @*@Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control textfield-0" } })*@
+                                            <div class="valid-companyname">
+                                                Thanks!
                                             </div>
+                                            <div class="invalid-companyname">
+                                                Please type a company name.
+                                            </div>
+
                                         </div>
                                         <div class="form-group text-green col-md-12">
-                                            @Html.LabelFor(model => model.ContactName, htmlAttributes: new { @class = "control-label col-md-12" })
-                                            <div class="col-md-12">
-                                                @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control textfield-1", @placeholder = "First and last name", @Value = "valuePlaceholder" } })
-                                                @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
+                                            @Html.LabelFor(model => model.ContactName, htmlAttributes: new { @class = "p-0 m-0 control-label col-md-12" })
+
+                                            <input class="form-control col text-left textfield-1 contact-name" id="contactname" name="ContactName" type="text" value="">
+                                            @*@Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control textfield-1", @placeholder = "First and last name", @Value = "valuePlaceholder" } })*@
+                                            <div class="valid-contactname">
+                                                Thanks!
+                                            </div>
+                                            <div class="invalid-contactname">
+                                                Please type your first and last name.
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group  text-green col-md-6">
+                                            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "p-0 m-0 control-label col-md-12" })
+                                            <input class="form-control col text-left textfield-2 phone" id="phone" name="Phone" type="number" value="">
+                                            @*@Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-green textfield-2", @placeholder = "Contact number", @Value = "" } })*@
+                                            <div class="valid-phone">
+                                                Thanks!
+                                            </div>
+                                            <div class="invalid-phone">
+                                                Please enter a valid phone number.
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group text-green col-md-6">
+                                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "p-0 m-0 control-label col-md-12" })
+                                            <input class="form-control col text-left textfield-3 emailinfo" id="emailinfo" name="EmailInfo" type="email" value="">
+                                            @*@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text-green textfield-3", @Value = "mail@example.com" } })*@
+                                            <div class="valid-emailinfo">
+                                                Thanks!
+                                            </div>
+                                            <div class="invalid-emailinfo">
+                                                Please enter a valid email address.
                                             </div>
                                         </div>
                                         <div class="form-group text-green col-md-6">
-                                            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-12" })
-                                            <div class="col-md-12 text-green">
-                                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control text-green textfield-2", @placeholder = "Contact number", @Value = "" } })
-                                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger text-green" })
+                                            @Html.LabelFor(model => model.Street1, htmlAttributes: new { @class = "p-0 m-0 control-label col-md-12" })
+
+                                            @*@Html.EditorFor(model => model.Street1, new { htmlAttributes = new { @class = "form-control textfield-4", @placeholder = "Street name", @Value = "valuePlaceholder" } })*@
+                                            <input class="form-control col text-left textfield-4 street1" id="street1" name="Street1" type="text" value="">
+                                            <div class="valid-street1">
+                                                Thanks!
+                                            </div>
+                                            <div class="invalid-street1">
+                                                Please enter a valid address.
                                             </div>
                                         </div>
                                         <div class="form-group text-green col-md-6">
-                                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
-                                            <div class="col-md-12">
-                                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control text-green textfield-3", @Value = "mail@example.com" } })
-                                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                                            </div>
+                                            @Html.LabelFor(model => model.Street2, htmlAttributes: new { @class = "p-0 m-0 control-label col-md-12" })
+                                            @Html.EditorFor(model => model.Street2, new { htmlAttributes = new { @class = "form-control" } })
                                         </div>
                                         <div class="form-group text-green col-md-6">
-                                            @Html.LabelFor(model => model.Street1, htmlAttributes: new { @class = "control-label col-md-12" })
-                                            <div class="col-md-12">
-                                                @Html.EditorFor(model => model.Street1, new { htmlAttributes = new { @class = "form-control textfield-4", @placeholder = "Street name", @Value = "valuePlaceholder" } })
-                                                @Html.ValidationMessageFor(model => model.Street1, "", new { @class = "text-danger" })
+                                            @Html.LabelFor(model => model.CityName, htmlAttributes: new { @class = "p-0 m-0 control-label col-md-12" })
+                                                @*@Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control textfield-5", @placeholder = "City", @Value = "valuePlaceholder" } })*@
+                                                <input class="form-control col text-left textfield-5 cityname" id="cityname" name="CityName" type="text" value="">
+                                                <div class="valid-cityname">
+                                                    Thanks!
+                                                </div>
+                                                <div class="invalid-cityname">
+                                                    Please enter a city.
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group text-green col-md-6">
-                                            @Html.LabelFor(model => model.Street2, htmlAttributes: new { @class = "control-label col-md-12" })
-                                            <div class="col-md-12">
-                                                @Html.EditorFor(model => model.Street2, new { htmlAttributes = new { @class = "form-control", @placeholder = "Apt, Suite, or Bldg number", @Value = "valuePlaceholder" } })
-                                                @Html.ValidationMessageFor(model => model.Street2, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group text-green col-md-6">
-                                            @Html.LabelFor(model => model.CityName, htmlAttributes: new { @class = "control-label col-md-12" })
-                                            <div class="col-md-12">
-                                                @Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control textfield-5", @placeholder = "City", @Value = "valuePlaceholder" } })
-                                                @Html.ValidationMessageFor(model => model.CityName, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
                                         <div class="form-group text-green col-md-6 ">
-                                            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-12" })
-                                            <div class="col-md-12">
-                                                @* I'm trying to add the states as a dropdown list. I'll work on it tonight. *@
-                                                @*@Html.DropDownListFor(model => model.State, new SelectList(Enum.GetValues(typeof(USStates))), "Select State")*@
-                                                @*@Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control", @placeholder = "State" } })*@
-                                                @Html.DropDownList("States", new List<SelectListItem>
-                                                            {
-                                                            new SelectListItem{ Text="Alabama", Value = "Alabama" },
-                                                            new SelectListItem{ Text="Alaska", Value = "Alaska" },
-                                                            new SelectListItem{ Text="Arizona", Value = "Arizona" },
-                                                            new SelectListItem{ Text="Arkansas", Value = "Arkansas" },
-                                                            new SelectListItem{ Text="California", Value = "California" },
-                                                            new SelectListItem{ Text="Colorado", Value = "Colorado" },
-                                                            new SelectListItem{ Text="Connecticut", Value = "Connecticut" },
-                                                            new SelectListItem{ Text="District of Columbia", Value = "District of Columbia" },
-                                                            new SelectListItem{ Text="Delaware", Value = "Delaware" },
-                                                            new SelectListItem{ Text="Florida", Value = "Florida" },
-                                                            new SelectListItem{ Text="Georgia", Value = "Georgia" },
-                                                            new SelectListItem{ Text="Hawaii", Value = "Hawaii" },
-                                                            new SelectListItem{ Text="Idaho", Value = "Idaho" },
-                                                            new SelectListItem{ Text="Illinois", Value = "Illinois" },
-                                                            new SelectListItem{ Text="Indiana", Value = "Indiana" },
-                                                            new SelectListItem{ Text="Iowa", Value = "Iowa" },
-                                                            new SelectListItem{ Text="Kansas", Value = "Kansas" },
-                                                            new SelectListItem{ Text="Kentucky", Value = "Kentucky" },
-                                                            new SelectListItem{ Text="Louisiana", Value = "Louisiana" },
-                                                            new SelectListItem{ Text="Maine", Value = "Maine" },
-                                                            new SelectListItem{ Text="Maryland", Value = "Maryland" },
-                                                            new SelectListItem{ Text="Massachusetts", Value = "Massachusetts" },
-                                                            new SelectListItem{ Text="Michigan", Value = "Michigan" },
-                                                            new SelectListItem{ Text="Minnesota", Value = "Minnesota" },
-                                                            new SelectListItem{ Text="Mississippi", Value = "Mississippi" },
-                                                            new SelectListItem{ Text="Missouri", Value = "Missouri" },
-                                                            new SelectListItem{ Text="Montana", Value = "Montana" },
-                                                            new SelectListItem{ Text="Nebraska", Value = "Nebraska" },
-                                                            new SelectListItem{ Text="Nevada", Value = "Nevada" },
-                                                            new SelectListItem{ Text="New Hampshire", Value = "New Hampshire" },
-                                                            new SelectListItem{ Text="New Jersey", Value = "New Jersey" },
-                                                            new SelectListItem{ Text="New Mexico", Value = "New Mexico" },
-                                                            new SelectListItem{ Text="New York", Value = "New York" },
-                                                            new SelectListItem{ Text="North Carolina", Value = "North Carolina" },
-                                                            new SelectListItem{ Text="North Dakota", Value = "North Dakota" },
-                                                            new SelectListItem{ Text="Ohio", Value = "Ohio" },
-                                                            new SelectListItem{ Text="Oklahoma", Value = "Oklahoma" },
-                                                            new SelectListItem{ Text="Oregon", Value = "Oregon" },
-                                                            new SelectListItem{ Text="Pennsylvania", Value = "Pennsylvania" },
-                                                            new SelectListItem{ Text="Rhode Island", Value = "Rhode Island" },
-                                                            new SelectListItem{ Text="South Carolina", Value = "South Carolina" },
-                                                            new SelectListItem{ Text="South Dakota", Value = "South Dakota" },
-                                                            new SelectListItem{ Text="Tennessee", Value = "Tennessee" },
-                                                            new SelectListItem{ Text="Texas", Value = "Texas" },
-                                                            new SelectListItem{ Text="Utah", Value = "Utah" },
-                                                            new SelectListItem{ Text="Vermont", Value = "Vermont" },
-                                                            new SelectListItem{ Text="Virginia", Value = "Virginia" },
-                                                            new SelectListItem{ Text="Washington", Value = "Washington" },
-                                                            new SelectListItem{ Text="West Virginia<", Value = "West Virginia" },
-                                                            new SelectListItem{ Text="Wisconsin", Value = "Wisconsin" },
-                                                            new SelectListItem{ Text="Wyoming", Value = "Wyoming" },
-                                                            })
-                                                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                                            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "p-0 m-0 control-label col-md-12" })
+
+                                            @* I'm trying to add the states as a dropdown list. I'll work on it tonight. *@
+                                            @*@Html.DropDownListFor(model => model.State, new SelectList(Enum.GetValues(typeof(USStates))), "Select State")*@
+                                            @*@Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control", @placeholder = "State" } })*@
+                                            @Html.DropDownList("States", new List<SelectListItem>
+                {
+                new SelectListItem{ Text="", Value = "" },
+                new SelectListItem{ Text="Alabama", Value = "Alabama" },
+                new SelectListItem{ Text="Alaska", Value = "Alaska" },
+                new SelectListItem{ Text="Arizona", Value = "Arizona" },
+                new SelectListItem{ Text="Arkansas", Value = "Arkansas" },
+                new SelectListItem{ Text="California", Value = "California" },
+                new SelectListItem{ Text="Colorado", Value = "Colorado" },
+                new SelectListItem{ Text="Connecticut", Value = "Connecticut" },
+                new SelectListItem{ Text="District of Columbia", Value = "District of Columbia" },
+                new SelectListItem{ Text="Delaware", Value = "Delaware" },
+                new SelectListItem{ Text="Florida", Value = "Florida" },
+                new SelectListItem{ Text="Georgia", Value = "Georgia" },
+                new SelectListItem{ Text="Hawaii", Value = "Hawaii" },
+                new SelectListItem{ Text="Idaho", Value = "Idaho" },
+                new SelectListItem{ Text="Illinois", Value = "Illinois" },
+                new SelectListItem{ Text="Indiana", Value = "Indiana" },
+                new SelectListItem{ Text="Iowa", Value = "Iowa" },
+                new SelectListItem{ Text="Kansas", Value = "Kansas" },
+                new SelectListItem{ Text="Kentucky", Value = "Kentucky" },
+                new SelectListItem{ Text="Louisiana", Value = "Louisiana" },
+                new SelectListItem{ Text="Maine", Value = "Maine" },
+                new SelectListItem{ Text="Maryland", Value = "Maryland" },
+                new SelectListItem{ Text="Massachusetts", Value = "Massachusetts" },
+                new SelectListItem{ Text="Michigan", Value = "Michigan" },
+                new SelectListItem{ Text="Minnesota", Value = "Minnesota" },
+                new SelectListItem{ Text="Mississippi", Value = "Mississippi" },
+                new SelectListItem{ Text="Missouri", Value = "Missouri" },
+                new SelectListItem{ Text="Montana", Value = "Montana" },
+                new SelectListItem{ Text="Nebraska", Value = "Nebraska" },
+                new SelectListItem{ Text="Nevada", Value = "Nevada" },
+                new SelectListItem{ Text="New Hampshire", Value = "New Hampshire" },
+                new SelectListItem{ Text="New Jersey", Value = "New Jersey" },
+                new SelectListItem{ Text="New Mexico", Value = "New Mexico" },
+                new SelectListItem{ Text="New York", Value = "New York" },
+                new SelectListItem{ Text="North Carolina", Value = "North Carolina" },
+                new SelectListItem{ Text="North Dakota", Value = "North Dakota" },
+                new SelectListItem{ Text="Ohio", Value = "Ohio" },
+                new SelectListItem{ Text="Oklahoma", Value = "Oklahoma" },
+                new SelectListItem{ Text="Oregon", Value = "Oregon" },
+                new SelectListItem{ Text="Pennsylvania", Value = "Pennsylvania" },
+                new SelectListItem{ Text="Rhode Island", Value = "Rhode Island" },
+                new SelectListItem{ Text="South Carolina", Value = "South Carolina" },
+                new SelectListItem{ Text="South Dakota", Value = "South Dakota" },
+                new SelectListItem{ Text="Tennessee", Value = "Tennessee" },
+                new SelectListItem{ Text="Texas", Value = "Texas" },
+                new SelectListItem{ Text="Utah", Value = "Utah" },
+                new SelectListItem{ Text="Vermont", Value = "Vermont" },
+                new SelectListItem{ Text="Virginia", Value = "Virginia" },
+                new SelectListItem{ Text="Washington", Value = "Washington" },
+                new SelectListItem{ Text="West Virginia", Value = "West Virginia" },
+                new SelectListItem{ Text="Wisconsin", Value = "Wisconsin" },
+                new SelectListItem{ Text="Wyoming", Value = "Wyoming" },
+                }, new { @class = "form-control state" })
+                                            <div class="valid-state">
+                                                Thanks!
                                             </div>
+                                            <div class="invalid-state">
+                                                Please select a state.
+                                            </div>
+
                                         </div>
                                         <div class="form-group text-green col-md-4 ">
-                                            @Html.LabelFor(model => model.Zipcode, htmlAttributes: new { @class = "control-label col-md-12" })
-                                            <div class="col-md-12">
-                                                @Html.EditorFor(model => model.Zipcode, "Text", new { htmlAttributes = new { @class = "form-control textfield-6", @placeholder = "Zipcode", @Value = "valuePlaceholder" } })
-                                                @Html.ValidationMessageFor(model => model.Zipcode, "", new { @class = "text-danger" })
+                                            @Html.LabelFor(model => model.Zipcode, htmlAttributes: new { @class = "p-0 m-0 control-label col-md-12" })
+
+                                            @*@Html.EditorFor(model => model.Zipcode, "Text", new { htmlAttributes = new { @class = "form-control textfield-6", @placeholder = "Zipcode", @Value = "valuePlaceholder" } })*@
+                                            <input class="form-control col text-left textfield-6 zipcode" id="zipcode" name="Zipcode" type="text" value="">
+                                            <div class="valid-zipcode">
+                                                Thanks!
+                                            </div>
+                                            <div class="invalid-zipcode">
+                                                Please enter a valid zipcode.
                                             </div>
                                         </div>
                                         <div class="custom-control text-green custom-checkbox col-md-12">
@@ -419,14 +467,30 @@
 <script>
 
     $(document).ready(function () {
-
-
         $('#portnumber-toggle').click(function () {
             if ($('.portnumber').css('visibility') == 'hidden') {
                 $('.portnumber').css('visibility', 'visible');
+                $('#yes').css('visibility', 'visible');
+                $('#no').css('visibility', 'hidden');
+                $('#howmanynumbersporting').removeClass('optional');
             }
             else {
                 $('.portnumber').css('visibility', 'hidden');
+                $('#no').css('visibility', 'visible');
+                $('#yes').css('visibility', 'hidden');
+                $('#howmanynumbersporting').addClass('optional');
+            }
+        });
+
+
+        $('#portnumber-toggle2').click(function () {
+            if ($('#yes2').css('visibility') == 'hidden') {
+                $('#yes2').css('visibility', 'visible');
+                $('#no2').css('visibility', 'hidden');
+            }
+            else {
+                $('#no2').css('visibility', 'visible');
+                $('#yes2').css('visibility', 'hidden');
             }
         });
 
