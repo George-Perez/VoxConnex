@@ -210,6 +210,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
+/* all valid modal stuff*/
 .valid-companyname, 
 .valid-contactname, 
 .valid-phone,
