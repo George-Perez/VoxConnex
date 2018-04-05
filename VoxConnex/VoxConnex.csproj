@@ -216,6 +216,8 @@
     <Content Include="font-awesome\HELP-US-OUT.txt" />
     <Content Include="gulpfile.js" />
     <Content Include="img\DeskphotoDark.jpg" />
+    <Content Include="img\DeskphotoDG.jpg" />
+    <Content Include="img\PolycomLight.jpg" />
     <Content Include="img\portfolio\fullsize\1.jpg" />
     <Content Include="img\portfolio\fullsize\2.jpg" />
     <Content Include="img\portfolio\fullsize\3.jpg" />
