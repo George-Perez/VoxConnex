@@ -178,7 +178,7 @@ jQuery(document).ready(function () {
         }
     }
 
- //validation for EACH element!!
+ //validation for EACH element!! Why George... Why does it not work on your computer?
     function toggleHowManyNumbersPorting() {
         if ($('.how-many-numbers-porting').val() == "") {
             toggle = "enabled";
