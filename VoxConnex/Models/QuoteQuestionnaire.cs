@@ -34,12 +34,12 @@ namespace VoxConnex.Models
 
         //string _companyName = "Company name";
         //[Required(ErrorMessage = "You must type in a valid company name.")]
-        //[Display(Name = "Company Name")]
+        [Display(Name = "Company Name")]
         //[DefaultValue("Company name")]
         //[RegularExpression("/^[.@&]?[a - zA - Z0 - 9] +[!.@&()]?[a - zA - Z0 - 9!()] +/", ErrorMessage = "You must type in a valid company name.")]
         public string CompanyName
         {
-            get;set;
+            get; set;
         }
 
         //[Required(ErrorMessage = "Field can't be empty")]

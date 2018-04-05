@@ -1,4 +1,3 @@
-
 function scroll_to_class(element_class, removed_height) {
     var scroll_to = $(element_class).offset().top - removed_height;
     if ($(window).scrollTop() != scroll_to) {
@@ -48,6 +47,8 @@ jQuery(document).ready(function () {
             formValue[i] = $('.textfield-' + i).val();
         }
 
+
+
         var parent_fieldset = $(this).parents('fieldset');
         var next_step = true;
         // navigation steps / progress steps
@@ -67,7 +68,6 @@ jQuery(document).ready(function () {
 
             }
         });
-        // fields validation
 
         if (next_step) {
             parent_fieldset.fadeOut(400, function () {
@@ -103,7 +103,23 @@ jQuery(document).ready(function () {
     });
 
 
+    //$('.btn-submit').on('click', function () {
+    //    var parent_fieldset = $(this).parents('fieldset');
+    //    var next_step = true;
 
+    //    // fields validation
+    //    parent_fieldset.find('input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea').each(function () {
+    //        if ($(this).val() == "") {
+    //            if (!$(this).hasClass("optional")) {
+    //                $(this).addClass('input-error');
+    //                next_step = false;
+    //            }
+    //        }
+    //        else {
+    //            $(this).removeClass('input-error');
+
+    //        }
+    //    });
 
 
 
@@ -112,24 +128,28 @@ jQuery(document).ready(function () {
 
 
     /*
-
     !!!!!!!!!!!!! ALL JOHNS CODE !!!!!!!!!!!!!!
     !!!!!!!!!!!!! USE AT OWN RISK !!!!!!!!!!!!!
-
     I tried to explain each function.... Hope this helps.
     v0.1
-
     CURRENTLY NOT FUNCTIONING CORRECTLY - 3/20/2018
-
     */
 
     //global variables for validation of f1 form
     var toggle = "";
     var formValue = [];
 
-    // on submit click, go through each textfield- + i and valdiate the fields
-    $('.f1').on('submit', function (e) {
-            validateTextField('.f1');
+    // on submit click, go through each textfield- + i and each field validation to valdiate the fields for the user
+    $('.btn-submit').on('click', function (e) {
+        toggleCompanyName();
+        toggleContactName();
+        togglePhoneNumber();
+        toggleEmailInfo();
+        toggleStreet1();
+        toggleCityName();
+        toggleState();
+        toggleZipcode();
+        validateTextField('.f1');
     });
 
     //Nested this section to the next button. Now we get formValues the first time a user clicks next.
@@ -139,7 +159,7 @@ jQuery(document).ready(function () {
     //    }
 
 
-  
+
     /*
     toggles validation on or off by storing a local variable of what the user types in (if anything),
     and then go through each text field to check to see if the original value of the text field
@@ -151,51 +171,197 @@ jQuery(document).ready(function () {
         for (var i = 0; i <= 6; i++) {
             userValue[i] = $('.textfield-' + i).val();
         }
-        if (userValue[i] != formValue[i]){
+        if (userValue[i] != formValue[i]) {
             toggle = "enabled";
         } else {
             toggle = "";
         }
     }
 
-    ////phone validation with regular express and int instead of text
-    //function togglePhoneValidation() {
-    //if (phone number == valid) {
-    //    toggle = "enabled";
-    //} else {
-    //      toggle = "";
-    // spit out error message for phone
-    //}
-    
+ //validation for EACH element!!
+    function toggleHowManyNumbersPorting() {
+        if ($('.how-many-numbers-porting').val() == "") {
+            toggle = "enabled";
+            $('.invalid-howmanynumbersporting').css('display', 'block');
+            $('.valid-howmanynumbersporting').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-howmanynumbersporting').css('display', 'none');
+            $('.valid-howmanynumbersporting').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.btn-next').on('click', function () {
+        toggleHowManyNumbersPorting();
+    });
+    $('.how-many-numbers-porting').on('click change', function () {
+        toggleHowManyNumbersPorting();
+    });
 
-    ////email validation with regluar expression
-    //function toggleEmailValidation() {
-    //    if (emailaddress == valid) {
-    //        toggle = "enabled";
-    //    } else {
-    //        toggle = "";
-    //        spit out error message for email
-    //    }
-    //}
+    function toggleHowManyUsersInt() {
+        if ($('.how-many-users').val() == "") {
+            toggle = "enabled";
+            $('.invalid-tooltip').css('display', 'block');
+            $('.valid-tooltip').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-tooltip').css('display', 'none');
+            $('.valid-tooltip').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.btn-next2').on('click', function () {
+        toggleHowManyUsersInt();
+    });
+    $('.how-many-users').on('click change', function () {
+        toggleHowManyUsersInt();
+    });
 
-    ////first and last name validation with regular expression
-    //function toggleContactValidation() {
-    //    if (first and last name == valid) {
-    //        toggle = "enabled";
-    //    } else {
-    //        toggle = "";
-    //        spit out error message for first and last name
-    //    }
-    //}
+    function toggleCompanyName() {
+        if ($('.company-name').val() == "") {
+            toggle = "enabled";
+            $('.invalid-companyname').css('display', 'block');
+            $('.valid-companyname').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-companyname').css('display', 'none');
+            $('.valid-companyname').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.company-name').on('click change', function () {
+        toggleCompanyName();
+    });
+
+    function toggleContactName() {
+        if ($('.contact-name').val() == "") {
+            toggle = "enabled";
+            $('.invalid-contactname').css('display', 'block');
+            $('.valid-contactname').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-contactname').css('display', 'none');
+            $('.valid-contactname').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.contact-name').on('click change', function () {
+        toggleContactName();
+    });
 
 
+    function togglePhoneNumber() {
+        if ($('.phone').val() == "") {
+            toggle = "enabled";
+            $('.invalid-phone').css('display', 'block');
+            $('.valid-phone').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-phone').css('display', 'none');
+            $('.valid-phone').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.phone').on('click change', function () {
+        togglePhoneNumber();
+    });
+
+
+    function togglePhoneNumber() {
+        if ($('.phone').val() == "") {
+            toggle = "enabled";
+            $('.invalid-phone').css('display', 'block');
+            $('.valid-phone').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-phone').css('display', 'none');
+            $('.valid-phone').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.phone').on('click change', function () {
+        togglePhoneNumber();
+    });
+
+
+    function toggleEmailInfo() {
+        if ($('.emailinfo').val() == "") {
+            toggle = "enabled";
+            $('.invalid-emailinfo').css('display', 'block');
+            $('.valid-emailinfo').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-emailinfo').css('display', 'none');
+            $('.valid-emailinfo').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.emailinfo').on('click change', function () {
+        toggleEmailInfo();
+    });
+
+
+    function toggleStreet1() {
+        if ($('.street1').val() == "") {
+            toggle = "enabled";
+            $('.invalid-street1').css('display', 'block');
+            $('.valid-street1').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-street1').css('display', 'none');
+            $('.valid-street1').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.street1').on('click change', function () {
+        toggleStreet1();
+    });
+
+
+
+    function toggleCityName() {
+        if ($('.cityname').val() == "") {
+            toggle = "enabled";
+            $('.invalid-cityname').css('display', 'block');
+            $('.valid-cityname').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-cityname').css('display', 'none');
+            $('.valid-cityname').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.cityname').on('click change', function () {
+        toggleCityName();
+    });
+
+
+    function toggleState() {
+        if ($('.state').val() == "") {
+            toggle = "enabled";
+            $('.invalid-state').css('display', 'block');
+            $('.valid-state').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-state').css('display', 'none');
+            $('.valid-state').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.state').on('click change', function () {
+        toggleState();
+    });
+
+
+    function toggleZipcode() {
+        if ($('.zipcode').val() == "") {
+            toggle = "enabled";
+            $('.invalid-zipcode').css('display', 'block');
+            $('.valid-zipcode').css('display', 'none');
+        } else {
+            toggle = "";
+            $('.invalid-zipcode').css('display', 'none');
+            $('.valid-zipcode').css('display', 'block').delay(2000).fadeOut("slow");
+        }
+    }
+    $('.zipcode').on('click change', function () {
+        toggleZipcode();
+    });
 
 
     /*
     Checks if toggle is enabled. If enabled, then checks regular expression
-
     !!!!!!!!!!!!!!!!!!REGULAR EXPRESSION NOT SETUP YET!!!!!!!!!!!!!!!!!!!!!!!
-
     and checks to see if the value is empty. If it is, then add class 'input-error',
     stopping the user from completely filling out the form. Otherwise, continue to the next
     function.
@@ -210,30 +376,7 @@ jQuery(document).ready(function () {
             else {
                 $(textfieldid).removeClass('input-error');
             }
-            // fields validation	
         }
-        else {
-            /*
-            This section disabled until can get the function to work correctly
-            !!!!!!!!!!!!!!!!!CURRENTLY DISABLED!!!!!!!!!!!!!!!!!!!!!!!!!
-            */
-            //$(formclass).validate({
-            //    invalidHandler: function (event, validator) {
-            //        // 'this' refers to the form
-            //        var errors = validator.numberOfInvalids();
-            //        if (errors) {
-            //            var message = errors == 1
-            //                ? 'You missed 1 field. It has been highlighted'
-            //                : 'You missed ' + errors + ' fields. They have been highlighted';
-            //            $("div.error span").html(message);
-            //            $("div.error").show();
-            //        } else {
-            //            $("div.error").hide();
-            //        }
-            //    }
-            //});
-        }
-
     }
 
 
